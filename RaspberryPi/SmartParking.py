@@ -7,7 +7,7 @@ import socket
 
 MAX_DISTANCE = 5
 PORT = 1234
-HOST = "192.168.1.14"
+HOST = "192.168.1.7"
 
 #sensor 1
 TRIG1 = 23
