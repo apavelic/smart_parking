@@ -1,0 +1,5 @@
+main\java\com\smartparking\models\ParkingStateEnum.class
+main\java\com\smartparking\models\Parking.class
+main\java\com\smartparking\server\Server.class
+main\java\com\smartparking\threads\ClientThread.class
+main\java\com\smartparking\models\State.class
