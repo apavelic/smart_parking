@@ -7,7 +7,7 @@ import socket
 
 MAX_DISTANCE = 5
 PORT = 1234
-HOST = "192.168.43.52"
+HOST = "192.168."
 
 #sensor 1
 TRIG1 = 23
@@ -15,7 +15,7 @@ ECHO1 = 24
 current_distance1 = 0
 firstTime1 = True
 
-#sensor 2
+.#sensor 2
 TRIG2 = 25
 ECHO2 = 12
 current_distance2 = 0
