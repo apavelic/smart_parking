@@ -1,6 +1,6 @@
-package com.smartparking.threads;
+package com.pavelic.smartparking.threads;
 
-import com.smartparking.server.Server;
+import com.pavelic.smartparking.server.Server;
 
 import java.io.*;
 import java.net.Socket;

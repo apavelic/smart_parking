@@ -1,7 +1,7 @@
-package com.smartparking.server;
+package com.pavelic.smartparking.server;
 
-        import com.smartparking.models.Parking;
-        import com.smartparking.models.State;
+        import com.pavelic.smartparking.models.Parking;
+        import com.pavelic.smartparking.models.State;
         import com.mongodb.BasicDBObject;
         import com.mongodb.MongoClient;
         import com.mongodb.client.MongoCollection;
