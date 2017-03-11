@@ -3,11 +3,14 @@
 import RPi.GPIO as GPIO
 import time
 import socket
+import dns.resolver
 
+resolver = dns.resolver.Resolver()
+dns = resolver.query("Andrej", "A")
 
 MAX_DISTANCE = 5
 PORT = 1234
-HOST = "192.168.43.52"
+HOST = str(dns[0])
 
 #sensor 1
 TRIG1 = 23
