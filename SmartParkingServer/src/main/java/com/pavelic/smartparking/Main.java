@@ -1,6 +1,7 @@
 package com.pavelic.smartparking;
 
 import com.pavelic.smartparking.threads.ClientThread;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,18 +14,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try (ServerSocket socket = new ServerSocket(PORT)) {
+        ServerSocket socket = null;
+
+        try {
+            socket = new ServerSocket(PORT);
             System.out.println("SERVER STARTED ON PORT: " + PORT);
             socket.accept();
-            System.out.println("Smart parking is Online");
-            while(true) {
-                Socket client = socket.accept();
+            System.out.println("Smart parking is ONLINE");
 
-                ExecutorService es = Executors.newFixedThreadPool(4);
-                es.execute(new ClientThread(client));
+            while(true) {
+                try {
+                    Socket client = socket.accept();
+                    ExecutorService es = Executors.newFixedThreadPool(4);
+                    es.execute(new ClientThread(client));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
