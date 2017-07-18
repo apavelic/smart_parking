@@ -1,0 +1,58 @@
+﻿.table {
+    width: 320px !important;
+    background: gray;
+}
+
+td {
+    height: 100%;
+    vertical-align: middle !important;
+}
+
+tr {
+    border: 7px solid #FFF;
+    background: green;
+}
+
+.parking-border {
+    display: table-cell;
+    width: 300px;
+    height: 160px;
+    vertical-align: middle;
+    padding-left: 15px;
+    background-color: white;
+}
+
+.parking {
+    background-color: white;
+    display: inline-block;
+    width: 110%;
+    height: 60%;
+}
+
+.info,
+.table {
+    margin-top: 40px;
+}
+
+.red, .green {
+    width: 30.5px;
+    height: 20px;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.info {
+    width: 250px;
+}
+.info .description {
+    padding: 0;
+}
+.info .info-part {
+    margin-bottom: 50%;
+}

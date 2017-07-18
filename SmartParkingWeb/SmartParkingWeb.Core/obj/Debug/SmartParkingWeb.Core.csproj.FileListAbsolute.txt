@@ -1,0 +1,9 @@
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\bin\Debug\SmartParkingWeb.Core.dll
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\bin\Debug\SmartParkingWeb.Core.pdb
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\bin\Debug\Newtonsoft.Json.dll
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\bin\Debug\RestSharp.dll
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\bin\Debug\Newtonsoft.Json.xml
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\bin\Debug\RestSharp.xml
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\obj\Debug\SmartParkingWeb.Core.csprojResolveAssemblyReference.cache
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\obj\Debug\SmartParkingWeb.Core.dll
+D:\Git\smart_parking\SmartParkingWeb\SmartParkingWeb.Core\obj\Debug\SmartParkingWeb.Core.pdb

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SmartParkingWeb.Core.Models.ParkingViewModel>
+@using SmartParkingWeb.Core.Enumerations;
+
+@{
+    ViewBag.Title = "Parking";
+}
+
+@section Styles {
+    <link href="@Url.Content("~/Content/app/parking.css")" rel="stylesheet" type="text/css" />
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-responsive">
+            @foreach (var item in Model)
+            {
+                var style = "green";
+                if (item.State == ParkingStateEnum.NOTFREE)
+                {
+                    style = "red";
+                }
+
+                <tr id="@item.Id" style="background: @style">
+                    <td>
+                        <div class="parking-element parking-border">
+                            <div class="parking-element parking"></div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="info col-md-4">
+        <div class="info-part legend">
+            <h3>Legend</h3>
+            <div class="green col-xs-2"></div>
+            <p class="col-xs-10"> Parking is <strong>FREE</strong></p>
+
+            <div class="red col-xs-2"></div>
+            <p class="col-xs-10">Parking is <strong>NOT FREE</strong></p>
+        </div>
+
+        <div class="info-part parking-info">
+            <h3>Parking info</h3>
+            <div class="green col-xs-2"></div>
+            <p class="col-xs-10"> Parking is <strong>ONLINE</strong></p>
+            <p class="description col-xs-12"> Parking location: <strong>Ilica 242</strong></p>
+            <p class="description col-xs-12">Number of parking: <strong>4</strong></p>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/app/parking.js"></script>
+}

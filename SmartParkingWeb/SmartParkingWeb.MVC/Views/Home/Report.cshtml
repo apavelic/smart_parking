@@ -1,0 +1,47 @@
+﻿@model SmartParkingWeb.Core.Models.StateViewModel
+
+@{
+    ViewBag.Title = "Report";
+}
+
+@section Styles {
+    <link href="~/Content/app/statistics.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class='col-md-4'>
+        <div class="form-group">
+            <div class='input-group date' id='dateFrom'>
+                <input type='text' class="form-control datepicker-text" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class='col-md-4'>
+        <div class="form-group">
+            <div class='input-group date' id='dateTo'>
+                <input type='text' class="form-control datepicker-text" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 checkbox">
+        <label><input type="checkbox" id="cbShowAll">Show reports for all time</label>
+    </div>
+    <div class="col-md-1">
+        <input type="button" value="Show Statistics" class="btn btn-info" id="btnStatistics" />
+    </div>
+</div>
+
+
+@section scripts {
+    <script src="~/Scripts/app/statistics.js"></script>
+}
+
+
+
+

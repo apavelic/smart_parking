@@ -1,0 +1,30 @@
+﻿#settings-panel .btn.btn-app img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 15px;
+    height: 55px;
+}
+
+#settings-panel .btn.btn-app {
+    width: 15%;
+    min-width: 130px;
+    height: 150px;
+    margin: 0 10px 10px 10px;
+}
+
+#settings-panel a {
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    #settings-panel .btn.btn-app {
+        width: 100px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #settings-panel .btn.btn-app {
+        min-width: 120px !important;
+    }
+}

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutWithoutNavbar.cshtml";
+}
+
+@section Styles {
+    <link href="@Url.Content("~/Content/app/index.css")" rel="stylesheet" type="text/css" />
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div id="settings-panel" class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <p class="text-center">
+                        <a href="@Url.Action("Parking", "Home")">
+                            <button type="button" class="btn btn-app btn-warning">
+                                <img class="button-icon" src="/Content/img/users.png">
+                                Parking<br />Status
+                            </button>
+                        </a>
+                        <a href="@Url.Action("Report", "Home")">
+                            <button type="button" class="btn btn-app btn-primary">
+                                <img class="button-icon" src="~/Content/img/statistic.png">
+                                Report
+                            </button>
+                        </a>
+                        <a href="@Url.Action("Settings", "Home")">
+                            <button type="button" class="btn btn-app btn-danger">
+                                <img class="button-icon" src="~/Content/img/settings.png">
+                                Settings
+                            </button>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
