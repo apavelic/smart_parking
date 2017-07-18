@@ -1,6 +1,0 @@
-com\pavelic\smartparking\models\Parking.class
-com\pavelic\smartparking\threads\ClientThread.class
-com\pavelic\smartparking\Main.class
-com\pavelic\smartparking\models\State.class
-com\pavelic\smartparking\server\Server.class
-com\pavelic\smartparking\models\ParkingStateEnum.class
