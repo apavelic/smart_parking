@@ -2,18 +2,24 @@
   <artifact type="exploded-war" name="Rest">
     <output-path>$PROJECT_DIR$/out/artifacts/Rest</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="WebApi/web/Web" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="classes">
-          <element id="module-output" name="WebApi" />
-          <element id="module-output" name="Data" />
-        </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="org.mongodb:mongodb-driver:3.4.2" />
-          <element id="library" level="project" name="com.google.code.gson:gson:2.8.1" />
-          <element id="library" level="project" name="Jersey-2.2" />
-        </element>
-      </element>
+      <element id="module-output" name="WebApi" />
+      <element id="module-output" name="Data" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/jersey-client.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/jersey-container-servlet-core.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/bson-3.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/javax.ws.rs-api-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/gson-2.8.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/jersey-common.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/mongodb-driver-core-3.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/jersey-container-servlet.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/mongodb-driver-3.4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Rest/WEB-INF/lib/jersey-server.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/WebApi/lib/jersey-common.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/WebApi/lib/jersey-server.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/WebApi/lib/jersey-client.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/WebApi/lib/javax.ws.rs-api-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/WebApi/lib/jersey-container-servlet-core.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/WebApi/lib/jersey-container-servlet.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

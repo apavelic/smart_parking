@@ -23,7 +23,9 @@
                 <tr id="@item.Id" style="background: @style">
                     <td>
                         <div class="parking-element parking-border">
-                            <div class="parking-element parking"></div>
+                            <div class="parking-element parking">
+                                <label class="parking-text" id="lblState_@item.Id"></label>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -38,7 +40,7 @@
             <p class="col-xs-10"> Parking is <strong>FREE</strong></p>
 
             <div class="red col-xs-2"></div>
-            <p class="col-xs-10">Parking is <strong>NOT FREE</strong></p>
+            <p class="col-xs-10">Parking is <strong>TAKEN</strong></p>
         </div>
 
         <div class="info-part parking-info">

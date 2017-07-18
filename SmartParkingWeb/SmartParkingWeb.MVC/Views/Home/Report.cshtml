@@ -9,31 +9,35 @@
 }
 
 <div class="container">
-    <div class='col-md-4'>
-        <div class="form-group">
-            <div class='input-group date' id='dateFrom'>
-                <input type='text' class="form-control datepicker-text" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+    <div class="col-md-3 statistic-filter">
+        <span class="col-md-12">Date from:</span>
+        <div class='col-md-12'>
+            <div class="form-group">
+                <div class='input-group date' id='dateFrom'>
+                    <input type='text' class="form-control datepicker-text" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class='col-md-4'>
-        <div class="form-group">
-            <div class='input-group date' id='dateTo'>
-                <input type='text' class="form-control datepicker-text" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+        <span class="col-md-12">Date to:</span>
+        <div class='col-md-12'>
+            <div class="form-group">
+                <div class='input-group date' id='dateTo'>
+                    <input type='text' class="form-control datepicker-text" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3 checkbox">
-        <label><input type="checkbox" id="cbShowAll">Show reports for all time</label>
-    </div>
-    <div class="col-md-1">
-        <input type="button" value="Show Statistics" class="btn btn-info" id="btnStatistics" />
+        <div class="col-md-12 checkbox">
+            <label><input type="checkbox" id="cbShowAll">Show reports for all time</label>
+        </div>
+        <div class="col-md-6">
+            <input type="button" value="Show Report" class="btn btn-info" id="btnStatistics" />
+        </div>
     </div>
 </div>
 
