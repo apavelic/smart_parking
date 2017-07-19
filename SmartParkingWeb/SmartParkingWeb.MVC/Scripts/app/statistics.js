@@ -1,9 +1,8 @@
 ﻿var statisticmanager = {
+    seriesOptions: [],
     init: function () {
         this.setDatePicker();
         this.addListeners();
-
-        console.log(Date.parse('1472688000000'));
     },
     addListeners: function () {
         $('.datepicker-text').keydown(function () {
@@ -39,14 +38,28 @@
         $.ajax({
             url: "/Home/GetStatistics",
             data: data,
-            dataType: "json",
+            dataType: "text",
             method: "GET",
-            success: function (data) {
-                console.log(data);
+            success: function (jsonString) {
+                var data = $.parseJSON(jsonString);
+                var index = 0;
+                $.each(data, function (key, value) {
+                    var array = $.map(value, function (value, index) {
+                        return [value];
+                    });
+
+                    statisticmanager.seriesOptions[index++] = {
+                        name: key,
+                        data: array
+                    };
+                });
+
+                statisticmanager.showHighchart();
             }
         });
 
     },
+
     setDatePicker: function () {
         $('#dateFrom').datetimepicker({
             format: 'DD.MM.YYYY',
@@ -70,6 +83,38 @@
             $('#dateFrom').data("DateTimePicker").maxDate(e.date);
         });
 
+    },
+    showHighchart: function () {
+        Highcharts.stockChart('chart', {
+            rangeSelector: {
+                selected: 4
+            },
+            yAxis: {
+                labels: {
+                    formatter: function () {
+                        console.log(this);
+                        return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                    }
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 2,
+                    color: 'silver'
+                }]
+            },
+            plotOptions: {
+                series: {
+                    compare: 'percent',
+                    showInNavigator: true
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                valueDecimals: 2,
+                split: true
+            },
+            series: statisticmanager.seriesOptions
+        });
     }
 }
 

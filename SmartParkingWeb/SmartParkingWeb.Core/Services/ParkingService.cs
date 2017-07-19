@@ -47,12 +47,56 @@ namespace SmartParkingWeb.Core.Services
             return model;
         }
 
-        public ChartViewModel PrepareChartData(string from, string to)
+        public Dictionary<int, Dictionary<double, int>> PrepareChartData(string from, string to)
         {
-            List<StateViewModel> model = GetParkingStateHistory(from, to);
+            IEnumerable<StateViewModel> model = GetParkingStateHistory(from, to).OrderBy(x => x.Date);
+            var usedDates = model.Select(x => x.Date.Date).Distinct();
+            var usedParkings = model.Select(x => x.ParkingId).Distinct();
 
-            return null;
+            Dictionary<int, Dictionary<double, int>> parkingStateDictionary = new Dictionary<int, Dictionary<double, int>>();
 
+            foreach (var parkingId in usedParkings)
+            {
+                parkingStateDictionary.Add(parkingId, new Dictionary<double, int>());
+
+                foreach (var date in usedDates)
+                {
+                    IEnumerable<StateViewModel> currentParkingStateByDate = model.Where(x => x.Date.Date == date && x.ParkingId == parkingId);
+
+                    foreach (StateViewModel state in currentParkingStateByDate)
+                    {
+                        if (state.State == Enumerations.ParkingStateEnum.NOTFREE)
+                        {
+                            var stateFree = model.FirstOrDefault(x => x.Date >= state.Date && x.ParkingId == parkingId && x.State == Enumerations.ParkingStateEnum.FREE);
+
+                            TimeSpan time = stateFree.Date - state.Date;
+                            double milliseconds = date.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+
+
+                            if (parkingStateDictionary[parkingId].ContainsKey(milliseconds) == false)
+                            {
+                                parkingStateDictionary[parkingId].Add(milliseconds, 0);
+                            }
+
+                            int hours = Convert.ToInt32(time.TotalMinutes / 60);
+                            int minutes = Convert.ToInt32(time.TotalMinutes % 60);
+
+                            if (minutes > 15)
+                            {
+                                hours++;
+                            }
+
+                            parkingStateDictionary[parkingId][milliseconds] += hours;
+                        }
+                    }
+                }
+                if (parkingStateDictionary[parkingId].Values.Sum() == 0)
+                {
+                    parkingStateDictionary.Remove(parkingId);
+                }
+            }
+
+            return parkingStateDictionary;
         }
     }
 }

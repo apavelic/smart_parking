@@ -2,18 +2,19 @@
   <artifact type="exploded-war" name="Rest">
     <output-path>$PROJECT_DIR$/out/artifacts/Rest</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="WebApi/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="WebApi" />
           <element id="module-output" name="Data" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="org.mongodb:mongodb-driver:3.4.2" />
-          <element id="library" level="project" name="com.google.code.gson:gson:2.8.1" />
-          <element id="library" level="project" name="Jersey-2.2" />
+          <element id="library" level="project" name="com.google.code.gson:gson:1.7.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jsr311-api-1.1.jar" />
+          <element id="library" level="project" name="org.mongodb:mongo-java-driver:3.4.2" />
+          <element id="library" level="project" name="javax.ws.rs:javax.ws.rs-api:2.0" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="WebApi/web/Web" />
     </root>
   </artifact>
 </component>

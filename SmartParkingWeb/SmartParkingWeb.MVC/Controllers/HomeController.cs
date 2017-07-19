@@ -1,4 +1,5 @@
-﻿using SmartParkingWeb.Core.Models;
+﻿using Newtonsoft.Json;
+using SmartParkingWeb.Core.Models;
 using SmartParkingWeb.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -38,10 +39,10 @@ namespace SmartParkingWeb.Web.Controllers
             return Json(service.GetParking(), JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetStatistics(string from = null, string to = null)
+        public string GetStatistics(string from = null, string to = null)
         {
-            var chartData = service.PrepareChartData(from, to);
-            return Json(chartData, JsonRequestBehavior.AllowGet);
+            string chartData = JsonConvert.SerializeObject(service.PrepareChartData(from, to));
+            return chartData;
         }
     }
 }
