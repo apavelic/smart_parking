@@ -1,0 +1,2254 @@
+﻿/*
+ * Ericsson stuff
+ * -----------
+ */
+.main-header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  font-size: 0;
+  top: -4px;
+  left: 0;
+  background: #0066b3;
+  background: -o-linear-gradient(left, #a2c517 10%, #009046 30%, #0082b6 50%, #151f77 75%, #db0050 100%);
+  background: -moz-linear-gradient(left, #a2c517 10%, #009046 30%, #0082b6 50%, #151f77 75%, #db0050 100%);
+  background: -webkit-linear-gradient(left, #a2c517 10%, #009046 30%, #0082b6 50%, #151f77 75%, #db0050 100%);
+  background: -ms-linear-gradient(left, #a2c517 10%, #009046 30%, #0082b6 50%, #151f77 75%, #db0050 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.1, #a2c517), color-stop(0.3, #009046), color-stop(0.5, #0082b6), color-stop(0.75, #151f77), color-stop(1, #db0050));
+  background: linear-gradient(left, #a2c517 10%, #009046 30%, #0082b6 50%, #151f77 75%, #db0050 100%);
+}
+.ebSystemBar-logo {
+  height: 44px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../../../Content/Ericsson/img/econ01.svg) no-repeat center center transparent;
+  width: 30px;
+  background-size: 30px;
+  padding: 0 0px;
+  left:10px;
+}
+
+/*
+ * Ericsson buttons
+ *
+ */
+.ebBtn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #333333;
+  background-color: #ffffff;
+  border: none;
+  min-width: 60px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+  padding: 0 8px;
+  height: 2.4rem;
+  /*font-size: 1.2rem;*/
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+a.ebBtn:hover {
+  color: #333;
+}
+a.ebBtn:focus {
+  text-decoration: none;
+  box-shadow: 0 0 2px 1px #4d90fe, 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+a.ebBtn:active {
+  text-decoration: none;
+  box-shadow: 0 0 2px 1px #4d90fe, 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+.ebBtn:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px #4d90fe, 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+.ebBtn:hover {
+  text-decoration: none;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);
+  /* W3C */
+}
+.ebBtn_active,
+.ebBtn:active {
+  text-decoration: none;
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_blue,
+.ebBtn_color_blue {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #0966b3;
+}
+a.ebBtn.ebBtn_color_blue:hover,
+.ebBtn_color_blue:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_blue:active,
+.ebBtn_color_blue:active,
+a.ebBtn.ebBtn_color_blue:active:hover,
+.ebBtn_color_blue:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_darkBlue,
+.ebBtn_color_darkBlue {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #0066b3;
+}
+a.ebBtn.ebBtn_color_darkBlue:hover,
+.ebBtn_color_darkBlue:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_darkBlue:active,
+.ebBtn_color_darkBlue:active,
+a.ebBtn.ebBtn_color_darkBlue:active:hover,
+.ebBtn_color_darkBlue:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_paleBlue,
+.ebBtn_color_paleBlue {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #00A9D4;
+}
+a.ebBtn.ebBtn_color_paleBlue:hover,
+.ebBtn_color_paleBlue:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_paleBlue:active,
+.ebBtn_color_paleBlue:active,
+a.ebBtn.ebBtn_color_paleBlue:active:hover,
+.ebBtn_color_paleBlue:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_darkGreen,
+.ebBtn_color_darkGreen {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #00625F;
+}
+a.ebBtn.ebBtn_color_darkGreen:hover,
+.ebBtn_color_darkGreen:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_darkGreen:active,
+.ebBtn_color_darkGreen:active,
+a.ebBtn.ebBtn_color_darkGreen:active:hover,
+.ebBtn_color_darkGreen:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_green,
+.ebBtn_color_green {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #89BA17;
+}
+a.ebBtn.ebBtn_color_green:hover,
+.ebBtn_color_green:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_green:active,
+.ebBtn_color_green:active,
+a.ebBtn.ebBtn_color_green:active:hover,
+.ebBtn_color_green:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_orange,
+.ebBtn_color_orange {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #F08A00;
+}
+a.ebBtn.ebBtn_color_orange:hover,
+.ebBtn_color_orange:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_orange:active,
+.ebBtn_color_orange:active,
+a.ebBtn.ebBtn_color_orange:active:hover,
+.ebBtn_color_orange:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_red,
+.ebBtn_color_red {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #E32119;
+}
+a.ebBtn.ebBtn_color_red:hover,
+.ebBtn_color_red:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_red:active,
+.ebBtn_color_red:active,
+a.ebBtn.ebBtn_color_red:active:hover,
+.ebBtn_color_red:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_purple,
+.ebBtn_color_purple {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  /* W3C */
+  color: #F0F0F0;
+  background-color: #953882;
+}
+a.ebBtn.ebBtn_color_purple:hover,
+.ebBtn_color_purple:hover {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  /* W3C */
+}
+a.ebBtn.ebBtn_color_purple:active,
+.ebBtn_color_purple:active,
+a.ebBtn.ebBtn_color_purple:active:hover,
+.ebBtn_color_purple:active:hover {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+.ebBtn_small {
+  font-size: 1.1rem;
+  padding: 0 6px;
+  height: 2rem;
+}
+.ebBtn_subtle {
+  background-image: none;
+  box-shadow: none;
+  min-width: auto;
+}
+.ebBtn_subtle:hover {
+  background-image: none;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.ebBtn_subtle:focus {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.ebBtn_subtle:active {
+  text-decoration: none;
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+.ebBtn_large {
+  font-size: 1.4rem;
+  padding: 0 10px;
+  height: 3.8rem;
+}
+.ebBtn:disabled,
+.ebBtn_disabled,
+.ebBtn:disabled:hover,
+.ebBtn_disabled:hover,
+.ebBtn:disabled:active,
+.ebBtn_disabled:active {
+  -ms-touch-action: none !important;
+  cursor: not-allowed !important;
+  touch-action: none !important;
+  background: rgba(0, 0, 0, 0.1);
+  color: #8d8d8d;
+}
+.ebBtn:disabled .ebIcon,
+.ebBtn_disabled .ebIcon {
+  opacity: 0.3;
+}
+/*
+ * There's a weird alignment problem with spans and buttons. Spans for
+ * reason when vertically aligned lower themselves by 1 pixel.
+ *
+ * Demonstration: http://jsfiddle.net/er35rhcw/
+ *
+ * Another issue is that line-height can "overflow" outside of an element and cause
+ * a vertical scrollbar to appear when there shouldn't be one.
+ *
+ * Demonstration: http://jsfiddle.net/u97c11zq/1/
+ *
+ * There are multiple different combinations of buttons that developers can use, and each
+ * scenario has its own challenges. The only rule is that if you're using an icon, you must use a span tag.
+ * All of the other scenarios are addressed by the blocks of CSS below.
+ *
+ * See examples/buttons.html "Alignment Check" section for examples.
+ */
+.ebBtn:not(button) {
+  line-height: 2.4rem;
+  overflow: hidden;
+}
+.ebBtn:not(button).ebBtn_small {
+  line-height: 2rem;
+}
+.ebBtn:not(button).ebBtn_subtle {
+  line-height: 1.2rem;
+}
+.ebBtn:not(button).ebBtn_large {
+  line-height: 3.8rem;
+}
+.ebBtn > span:not(:only-child),
+.ebBtn:not(button) > * {
+  vertical-align: middle;
+}
+.ebBtn:not(button) > * {
+  display: inline-block;
+  margin-top: -1px;
+}
+/*
+ * button group
+ */
+.ebBtnGroup {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.ebBtnGroup input {
+  position: absolute;
+}
+.ebBtnGroup input:focus + span {
+  box-shadow: 0 0 2px 1px #4d90fe, 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+  z-index: 1;
+}
+.ebBtnGroup input:checked + span {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+.ebBtnGroup input:checked:focus + span {
+  box-shadow: inset 2px 2px 2.5px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 0 2px 1px #4d90fe;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  /* W3C */
+}
+.ebBtnGroup label {
+  float: left;
+  position: relative;
+}
+.ebBtnGroup label > span {
+  border-radius: 0;
+}
+.ebBtnGroup label:not(:first-child) > span {
+  margin-left: -1px;
+}
+.ebBtnGroup label:first-child > span {
+  border-radius: 3px 0 0 3px;
+}
+.ebBtnGroup label:last-child > span {
+  border-radius: 0 3px 3px 0;
+}
+.ebBtnGroup_vertical label > span {
+  display: block;
+  margin-left: 0 !important;
+  margin-bottom: -1px;
+}
+.ebBtnGroup_vertical label {
+  float: none;
+}
+.ebBtnGroup_vertical label:first-child > span {
+  border-radius: 3px 3px 0 0;
+}
+.ebBtnGroup_vertical label:last-child > span {
+  border-radius: 0 0 3px 3px;
+}
+
+/*
+ * Ericsson icons
+ *
+*/
+.ebIconBtn {
+  display: inline-block;
+  border: none;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  padding: 6px 10px;
+  background-size: 100%;
+  background: no-repeat center center transparent;
+  opacity: 0.8;
+}
+.ebIconBtn:hover {
+  opacity: 0.4;
+  cursor: pointer;
+}
+.ebIconBtn:active {
+  opacity: 1;
+}
+.ebIconBtn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.ebIcon {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  height: 16px;
+  width: 16px;
+  line-height: 1.6rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: 100%;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  /*small icons  */
+  /*16px icons*/
+}
+.ebIcon_interactive {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.ebIcon_interactive:hover {
+  opacity: 1.0;
+}
+.ebIcon_interactive:active {
+  opacity: 0.4;
+}
+.ebIcon_button {
+  margin: 10px;
+}
+.ebIcon_noVertAlign {
+  vertical-align: inherit;
+}
+.ebIcon_disabled {
+  cursor: not-allowed;
+}
+.ebIcon_disabled,
+.ebIcon_disabled:hover,
+.ebIcon_disabled:active {
+  opacity: 0.3;
+}
+.ebIcon_small {
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+}
+.ebIcon_large {
+  height: 2.8rem;
+  width: 2.8rem;
+  line-height: 2.8rem;
+}
+.ebIcon_wMargin {
+  margin: 4px;
+}
+.ebIcon:focus{
+  outline: none;
+  box-shadow: 0 0 2px 1px #4d90fe;
+}
+.ebIcon_upArrow {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowUpSmall_black_16px.svg');
+}
+.ebIcon_upArrow_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/arrowUpSmall_white_16px.svg');
+}
+.ebIcon_downArrow {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDownSmall_black_16px.svg');
+}
+.ebIcon_downArrow_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDownSmall_white_16px.svg');
+}
+.ebIcon_leftArrow {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowLeftSmall_black_16px.svg');
+}
+.ebIcon_leftArrow_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowLeftSmall_white_16px.svg');
+}
+.ebIcon_rightArrow {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowRightSmall_black_16px.svg');
+}
+.ebIcon_rightArrow_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowRightSmall_white_16px.svg');
+}
+.ebIcon_prevArrow {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDoubleLeftSmall_black_16px.svg');
+}
+.ebIcon_nextArrow {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDoubleRightSmall_black_16px.svg');
+}
+.ebIcon_upArrow_10px {
+  background-image: url('../../../Content/Ericsson/resources/10px/ArrowUpSmall_black_10px.svg');
+}
+.ebIcon_downArrow_10px {
+  background-image: url('../../../Content/Ericsson/resources/10px/ArrowDownSmall_black_10px.svg');
+}
+.ebIcon_leftArrow_10px {
+  background-image: url('../../../Content/Ericsson/resources/10px/ArrowLeftSmall_black_10px.svg');
+}
+.ebIcon_rightArrow_10px {
+  background-image: url('../../../Content/Ericsson/resources/10px/ArrowRightSmall_black_10px.svg');
+}
+.ebIcon_prevArrow_10px {
+  background-image: url('../../../Content/Ericsson/resources/10px/ArrowDoubleLeftSmall_black_10px.svg');
+}
+.ebIcon_nextArrow_10px {
+  background-image: url('../../../Content/Ericsson/resources/10px/ArrowDoubleRightSmall_black_10px.svg');
+}
+.ebIcon_errorSmall {
+  background-image: url('../../../Content/Ericsson/resources/other/errorSmall_red_10px.svg');
+}
+.ebIcon_tickSmallBlack {
+  background-image: url('../../../Content/Ericsson/resources/other/tick_black_10x8px.svg');
+}
+.ebIcon_tickSmallGreen {
+  background-image: url('../../../Content/Ericsson/resources/other/tick_green_10x8px.svg');
+}
+.ebIcon_upArrowLarge {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowUp_black_16px.svg');
+}
+.ebIcon_upArrowLarge_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowUp_white_16px.svg');
+}
+.ebIcon_downArrowLarge {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDown_black_16px.svg');
+}
+.ebIcon_downArrowLarge_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDown_white_16px.svg');
+}
+.ebIcon_downArrowLarge_blue {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDown_blue_16px.svg');
+}
+.ebIcon_leftArrowLarge {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowLeft_black_16px.svg');
+}
+.ebIcon_leftArrowLarge_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowLeft_white_16px.svg');
+}
+.ebIcon_rightArrowLarge {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowRight_black_16px.svg');
+}
+.ebIcon_rightArrowLarge_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowRight_white_16px.svg');
+}
+.ebIcon_circleArrowDown {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowDown_black_16px.svg');
+}
+.ebIcon_circleArrowDown_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowDown_white_16px.svg');
+}
+.ebIcon_circleArrowLeft {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowLeft_black_16px.svg');
+}
+.ebIcon_circleArrowLeft_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowLeft_white_16px.svg');
+}
+.ebIcon_circleArrowRight {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowRight_black_16px.svg');
+}
+.ebIcon_circleArrowRight_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowRight_white_16px.svg');
+}
+.ebIcon_circleArrowUp {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowUp_black_16px.svg');
+}
+.ebIcon_circleArrowUp_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleArrowUp_white_16px.svg');
+}
+.ebIcon_circleCaretDown {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretDown_black_16px.svg');
+}
+.ebIcon_circleCaretDown_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretDown_white_16px.svg');
+}
+.ebIcon_circleCaretLeft {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretLeft_black_16px.svg');
+}
+.ebIcon_circleCaretLeft_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretLeft_white_16px.svg');
+}
+.ebIcon_circleCaretRight {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretRight_black_16px.svg');
+}
+.ebIcon_circleCaretRight_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretRight_white_16px.svg');
+}
+.ebIcon_circleCaretUp {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretUp_black_16px.svg');
+}
+.ebIcon_circleCaretUp_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/circleCaretUp_white_16px.svg');
+}
+.ebIcon_eLogo {
+  background-image: url('../../../Content/Ericsson/resources/systemBar/econ01.svg');
+}
+.ebIcon_comment {
+  background-image: url('../../../Content/Ericsson/resources/16px/Comment_black_16px.svg');
+}
+.ebIcon_copy {
+  background-image: url('../../../Content/Ericsson/resources/16px/copy_black_16px.svg');
+}
+.ebIcon_copy_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/copy_white_16px.svg');
+}
+.ebIcon_cut {
+  background-image: url('../../../Content/Ericsson/resources/16px/cut_black_16px.svg');
+}
+.ebIcon_cut_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/cut_white_16px.svg');
+}
+.ebIcon_delete {
+  background-image: url('../../../Content/Ericsson/resources/16px/delete_black_16px.svg');
+}
+.ebIcon_delete_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/delete_white_16px.svg');
+}
+.ebIcon_duplicate {
+  background-image: url('../../../Content/Ericsson/resources/16px/duplicate_black_16px.svg');
+}
+.ebIcon_duplicate_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/duplicate_white_16px.svg');
+}
+.ebIcon_edit {
+  background-image: url('../../../Content/Ericsson/resources/16px/edit_black_16px.svg');
+}
+.ebIcon_editWhite {
+  background-image: url('../../../Content/Ericsson/resources/16px/edit_white_16px.svg');
+}
+.ebIcon_newFile {
+  background-image: url('../../../Content/Ericsson/resources/16px/newFile_black_16px.svg');
+}
+.ebIcon_newFile_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/newFile_white_16px.svg');
+}
+.ebIcon_save {
+  background-image: url('../../../Content/Ericsson/resources/16px/save_black_16px.svg');
+}
+.ebIcon_save_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/save_white_16px.svg');
+}
+.ebIcon_filter {
+  background-image: url('../../../Content/Ericsson/resources/16px/filter_black_16px.svg');
+}
+.ebIcon_filter_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/filter_white_16px.svg');
+}
+.ebIcon_folder {
+  background-image: url('../../../Content/Ericsson/resources/16px/folder_black_16px.svg');
+}
+.ebIcon_folder_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/folder_white_16px.svg');
+}
+.ebIcon_folderClosed {
+  background-image: url('../../../Content/Ericsson/resources/16px/folderClosed_black_16px.svg');
+}
+.ebIcon_folderClosed_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/folder_white_16px.svg');
+}
+.ebIcon_detach {
+  background-image: url('../../../Content/Ericsson/resources/16px/detach_black_16px.svg');
+}
+.ebIcon_import {
+  background-image: url('../../../Content/Ericsson/resources/16px/import_black_16px.svg');
+}
+.ebIcon_export {
+  background-image: url('../../../Content/Ericsson/resources/16px/export_black_16px.svg');
+}
+.ebIcon_undo {
+  background-image: url('../../../Content/Ericsson/resources/16px/undo_black_16px.svg');
+}
+.ebIcon_undo_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/undo_white_16px.svg');
+}
+.ebIcon_valid {
+  background-image: url('../../../Content/Ericsson/resources/16px/valid_icon.svg');
+}
+.ebIcon_invalid {
+  background-image: url('../../../Content/Ericsson/resources/16px/invalid_icon.svg');
+}
+.ebIcon_error {
+  background-image: url('../../../Content/Ericsson/resources/16px/error_red_16px.svg');
+}
+.ebIcon_warning {
+  background-image: url('../../../Content/Ericsson/resources/16px/warning_yellow_16px.svg');
+}
+.ebIcon_warningOrange {
+  background-image: url('../../../Content/Ericsson/resources/16px/warning_orange_16px.svg');
+}
+.ebIcon_warningShield {
+  background-image: url('../../../Content/Ericsson/resources/16px/warningShield_black_16px.svg');
+}
+.ebIcon_warning_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/warning_white_16px.svg');
+}
+.ebIcon_mail {
+  background-image: url('../../../Content/Ericsson/resources/16px/mail_black_16px.svg');
+}
+.ebIcon_mail_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/mail_white_16px.svg');
+}
+.ebIcon_mailRead {
+  background-image: url('../../../Content/Ericsson/resources/16px/mailRead_black_16px.svg');
+}
+.ebIcon_mailRead_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/mailRead_white_16px.svg');
+}
+.ebIcon_lock {
+  background-image: url('../../../Content/Ericsson/resources/16px/lock_black_16px.svg');
+}
+.ebIcon_lock_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/lock_white_16px.svg');
+}
+.ebIcon_unlock {
+  background-image: url('../../../Content/Ericsson/resources/16px/unlock_black_16px.svg');
+}
+.ebIcon_unlock_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/unlock_white_16px.svg');
+}
+.ebIcon_logout {
+  background-image: url('../../../Content/Ericsson/resources/16px/logout_black_16px.svg');
+}
+.ebIcon_menu {
+  background-image: url('../../../Content/Ericsson/resources/16px/menu_black_16px.svg');
+}
+.ebIcon_menu_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/menu_white_16px.svg');
+}
+.ebIcon_search {
+  background-image: url('../../../Content/Ericsson/resources/16px/search_black_16px.svg');
+}
+.ebIcon_searchWhite {
+  background-image: url('../../../Content/Ericsson/resources/16px/search_white_16px.svg');
+}
+.ebIcon_advancedSearch {
+  background-image: url('../../../Content/Ericsson/resources/16px/advanced_search_black_16px.svg');
+}
+.ebIcon_advancedSearchWhite {
+  background-image: url('../../../Content/Ericsson/resources/16px/advanced_search_white_16px.svg');
+}
+.ebIcon_share {
+  background-image: url('../../../Content/Ericsson/resources/16px/share_black_16px.svg');
+}
+.ebIcon_star {
+  background-image: url('../../../Content/Ericsson/resources/16px/star_black_16px.svg');
+}
+.ebIcon_star_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/star_white_16px.svg');
+}
+.ebIcon_star_yellow {
+  background-image: url('../../../Content/Ericsson/resources/16px/star_yellow_16px.svg');
+}
+.ebIcon_starOutline {
+  background-image: url('../../../Content/Ericsson/resources/16px/star_outline_black_16px.svg');
+}
+.ebIcon_starOutline_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/star_outline_white_16px.svg');
+}
+.ebIcon_starOutline_yellow {
+  background-image: url('../../../Content/Ericsson/resources/16px/star_outline_yellow_16px.svg');
+}
+.ebIcon_tick {
+  background-image: url('../../../Content/Ericsson/resources/16px/tick_green_16px.svg');
+}
+.ebIcon_tick_black {
+  background-image: url('../../../Content/Ericsson/resources/16px/tick_16px.svg');
+}
+.ebIcon_simpleGreenTick {
+  background-image: url('../../../Content/Ericsson/resources/16px/simple_green_tick.svg');
+}
+.ebIcon_simpleTick_black {
+  background-image: url('../../../Content/Ericsson/resources/16px/simple_tick.svg');
+}
+.ebIcon_download {
+  background-image: url('../../../Content/Ericsson/resources/16px/download_black_16px.svg');
+}
+.ebIcon_downloadWhite {
+  background-image: url('../../../Content/Ericsson/resources/16px/download_white_16px.svg');
+}
+.ebIcon_documentWhite {
+  background-image: url('../../../Content/Ericsson/resources/16px/document_white_16px.svg');
+}
+.ebIcon_expand {
+  background-image: url('../../../Content/Ericsson/resources/16px/expand_black_16px.svg');
+}
+.ebIcon_rowCollapsed {
+  background-image: url('../../../Content/Ericsson/resources/16px/rowCollapsed_black_16px.svg');
+}
+.ebIcon_rowExpanded {
+  background-image: url('../../../Content/Ericsson/resources/16px/rowExpanded_black_16px.svg');
+}
+.ebIcon_rowView {
+  background-image: url('../../../Content/Ericsson/resources/16px/rowView_black_16px.svg');
+}
+.ebIcon_externalApp {
+  background-image: url('../../../Content/Ericsson/resources/16px/externalApp_black_16px.svg');
+}
+.ebIcon_externalApp_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/externalApp_white_16px.svg');
+}
+.ebIcon_fullscreen {
+  background-image: url('../../../Content/Ericsson/resources/16px/fullscreen_black_16px.svg');
+}
+.ebIcon_fullscreenMinimize {
+  background-image: url('../../../Content/Ericsson/resources/16px/fullscreenMinimise_black_16px.svg');
+}
+.ebIcon_help {
+  background-image: url('../../../Content/Ericsson/resources/16px/help_black_16px.svg');
+}
+.ebIcon_info {
+  background-image: url('../../../Content/Ericsson/resources/16px/information_black_16px.svg');
+}
+.ebIcon_dialogInfo {
+  background-image: url('../../../Content/Ericsson/resources/16px/information_blue_16px.svg');
+}
+.ebIcon_infoMsgIndicator {
+  background-image: url('../../../Content/Ericsson/resources/16px/infoMsgIndicator_16px.svg');
+}
+.ebIcon_exitFullscreen {
+  background-image: url('../../../Content/Ericsson/resources/16px/minimiseFullscreen_black_16px.svg');
+}
+.ebIcon_refresh {
+  background-image: url('../../../Content/Ericsson/resources/16px/refresh_black_16px.svg');
+}
+.ebIcon_refresh_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/refresh_white_16px.svg');
+}
+.ebIcon_settings {
+  background-image: url('../../../Content/Ericsson/resources/16px/settings_black_16px.svg');
+}
+.ebIcon_settings_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/settings_white_16px.svg');
+}
+.ebIcon_user {
+  background-image: url('../../../Content/Ericsson/resources/16px/user_black_16px.svg');
+}
+.ebIcon_user_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/user_white_16px.svg');
+}
+.ebIcon_close {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_black_16px.svg');
+}
+.ebIcon_close_blue {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_blue_16px.svg');
+}
+.ebIcon_close_paleBlue {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_paleBlue_16px.svg');
+}
+.ebIcon_close_green {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_green_16px.svg');
+}
+.ebIcon_close_orange {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_orange_16px.svg');
+}
+.ebIcon_close_red {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_red_16px.svg');
+}
+.ebIcon_close_yellow {
+  background-image: url('../../../Content/Ericsson/resources/16px/X_yellow_16px.svg');
+}
+.ebIcon_minus {
+  background-image: url('../../../Content/Ericsson/resources/16px/minus_black_16px.svg');
+}
+.ebIcon_plus {
+  background-image: url('../../../Content/Ericsson/resources/16px/plus_black_16px.svg');
+}
+.ebIcon_add {
+  background-image: url('../../../Content/Ericsson/resources/16px/add_black_16px.svg');
+}
+.ebIcon_multiSelect {
+  background-image: url('../../../Content/Ericsson/resources/16px/multiSelect_black_16px.svg');
+}
+.ebIcon_stop {
+  background-image: url('../../../Content/Ericsson/resources/16px/stop_black_16px.svg');
+}
+.ebIcon_pause {
+  background-image: url('../../../Content/Ericsson/resources/16px/pause_black_16px.svg');
+}
+.ebIcon_suspend {
+  background-image: url('../../../Content/Ericsson/resources/16px/suspend_black_16px.svg');
+}
+.ebIcon_resume {
+  background-image: url('../../../Content/Ericsson/resources/16px/resume_black_16px.svg');
+}
+.ebIcon_play {
+  background-image: url('../../../Content/Ericsson/resources/16px/play_black_16px.svg');
+}
+.ebIcon_fastForward {
+  background-image: url('../../../Content/Ericsson/resources/16px/fastForward_black_16px.svg');
+}
+.ebIcon_fastRewind {
+  background-image: url('../../../Content/Ericsson/resources/16px/fastRewind_black_16px.svg');
+}
+.ebIcon_print {
+  background-image: url('../../../Content/Ericsson/resources/16px/print_black_16px.svg');
+}
+.ebIcon_print_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/print_white_16px.svg');
+}
+.ebIcon_list_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/list_white_16px.svg');
+}
+.ebIcon_calendar {
+  background-image: url('../../../Content/Ericsson/resources/16px/calendar_black_16px.svg');
+}
+.ebIcon_calendar_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/calendar_white_16px.svg');
+}
+.ebIcon_alarmCleared {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmCleared_16px.svg');
+}
+.ebIcon_alarmCleared_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmCleared_white_16px.svg');
+}
+.ebIcon_alarmCritical {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmCritical_16px.svg');
+}
+.ebIcon_alarmCritical_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmCritical_white_16px.svg');
+}
+.ebIcon_alarmHeartbeat {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmHeartbeat_16px.svg');
+}
+.ebIcon_alarmIndeterminate {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmIndeterminate_16px.svg');
+}
+.ebIcon_alarmIndeterminate_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmIndeterminate_white_16px.svg');
+}
+.ebIcon_alarmMajor {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmMajor_16px.svg');
+}
+.ebIcon_alarmMajor_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmMajor_white_16px.svg');
+}
+.ebIcon_alarmMinor {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmMinor_16px.svg');
+}
+.ebIcon_alarmMinor_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmMinor_white_16px.svg');
+}
+.ebIcon_alarmWarning {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmWarning_16px.svg');
+}
+.ebIcon_alarmWarning_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmWarning_white_16px.svg');
+}
+.ebIcon_alarmOtherGrouping {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmOtherGrouping_16px.svg');
+}
+.ebIcon_alarmUnacknowledged {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmUnacknowledged_black_16px.svg');
+}
+.ebIcon_alarmUnspecified {
+  background-image: url('../../../Content/Ericsson/resources/16px/alarmUnspecified_16px.svg');
+}
+.ebIcon_acknowledgeAlarm {
+  background-image: url('../../../Content/Ericsson/resources/16px/acknowledgeAlarm_black_16px.svg');
+}
+.ebIcon_clearAlarm {
+  background-image: url('../../../Content/Ericsson/resources/16px/clearAlarm_black_16px.svg');
+}
+.ebIcon_bsc {
+  background-image: url('../../../Content/Ericsson/resources/16px/BSC_black_16px.svg');
+}
+.ebIcon_bscYellow {
+  background-image: url('../../../Content/Ericsson/resources/16px/BSC_Yellow_16px.svg');
+}
+.ebIcon_bscFunction {
+  background-image: url('../../../Content/Ericsson/resources/16px/BSCFunction_black_16px.svg');
+}
+.ebIcon_bscFunctionYellow {
+  background-image: url('../../../Content/Ericsson/resources/16px/BSCFunction_Yellow_16px.svg');
+}
+.ebIcon_cabinet {
+  background-image: url('../../../Content/Ericsson/resources/16px/cabinet_black_16px.svg');
+}
+.ebIcon_cellGray {
+  background-image: url('../../../Content/Ericsson/resources/16px/cell_gray_16px.svg');
+}
+.ebIcon_cellGreen {
+  background-image: url('../../../Content/Ericsson/resources/16px/cell_green_16px.svg');
+}
+.ebIcon_cellRed {
+  background-image: url('../../../Content/Ericsson/resources/16px/cell_red_16px.svg');
+}
+.ebIcon_cellAdjacent {
+  background-image: url('../../../Content/Ericsson/resources/16px/cellAdjacent_16px.svg');
+}
+.ebIcon_cellExternal {
+  background-image: url('../../../Content/Ericsson/resources/16px/cellExternal_16px.svg');
+}
+.ebIcon_charging {
+  background-image: url('../../../Content/Ericsson/resources/16px/charging_black_16px.svg');
+}
+.ebIcon_connected {
+  background-image: url('../../../Content/Ericsson/resources/16px/connected_black_16px.svg');
+}
+.ebIcon_disconnected {
+  background-image: url('../../../Content/Ericsson/resources/16px/disconnected_black_16px.svg');
+}
+.ebIcon_connectionError {
+  background-image: url('../../../Content/Ericsson/resources/16px/connectionError_black_16px.svg');
+}
+.ebIcon_core {
+  background-image: url('../../../Content/Ericsson/resources/16px/core_black_16px.svg');
+}
+.ebIcon_coreSubscriber {
+  background-image: url('../../../Content/Ericsson/resources/16px/coreSubscriber_black_16px.svg');
+}
+.ebIcon_database {
+  background-image: url('../../../Content/Ericsson/resources/16px/database_black_16px.svg');
+}
+.ebIcon_ftpServer {
+  background-image: url('../../../Content/Ericsson/resources/16px/ftpServer_black_16px.svg');
+}
+.ebIcon_ftpServerFunction {
+  background-image: url('../../../Content/Ericsson/resources/16px/ftpServerFunction_black_16px.svg');
+}
+.ebIcon_gateway {
+  background-image: url('../../../Content/Ericsson/resources/16px/gateway_black_16px.svg');
+}
+.ebIcon_gatewayFunction {
+  background-image: url('../../../Content/Ericsson/resources/16px/gatewayFunction_black_16px.svg');
+}
+.ebIcon_grabHandle {
+  background-image: url('../../../Content/Ericsson/resources/16px/grabHandle_black_16px.svg');
+}
+.ebIcon_managedFunction {
+  background-image: url('../../../Content/Ericsson/resources/16px/managedFunction_black_16px.svg');
+}
+.ebIcon_managedGroup {
+  background-image: url('../../../Content/Ericsson/resources/16px/managedGroup_black_16px.svg');
+}
+.ebIcon_managementNode {
+  background-image: url('../../../Content/Ericsson/resources/16px/managementNode_black_16px.svg');
+}
+.ebIcon_network {
+  background-image: url('../../../Content/Ericsson/resources/16px/network_black_16px.svg');
+}
+.ebIcon_networkElement {
+  background-image: url('../../../Content/Ericsson/resources/16px/networkElement_black_16px.svg');
+}
+.ebIcon_networkElement_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/networkElement_white_16px.svg');
+}
+.ebIcon_rbs {
+  background-image: url('../../../Content/Ericsson/resources/16px/RBS_black_16px.svg');
+}
+.ebIcon_rbs_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/RBS_white_16px.svg');
+}
+.ebIcon_routeSwitch {
+  background-image: url('../../../Content/Ericsson/resources/16px/routeSwitch.svg');
+}
+.ebIcon_rxi {
+  background-image: url('../../../Content/Ericsson/resources/16px/rxi_black_16px.svg');
+}
+.ebIcon_switchFunction {
+  background-image: url('../../../Content/Ericsson/resources/16px/switchFunction_black_16px.svg');
+}
+.ebIcon_technicianPresent {
+  background-image: url('../../../Content/Ericsson/resources/16px/technicianPresent_16px.svg');
+}
+.ebIcon_terminal {
+  background-image: url('../../../Content/Ericsson/resources/16px/terminal_black_16px.svg');
+}
+.ebIcon_topology {
+  background-image: url('../../../Content/Ericsson/resources/16px/topology_black_16px.svg');
+}
+.ebIcon_access {
+  background-image: url('../../../Content/Ericsson/resources/16px/access_black_16px.svg');
+}
+.ebIcon_access_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/access_white_16px.svg');
+}
+.ebIcon_accessSettings {
+  background-image: url('../../../Content/Ericsson/resources/16px/accessSettings_black_16px.svg');
+}
+.ebIcon_accessSettings_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/accessSettings_white_16px.svg');
+}
+.ebIcon_alignCenter {
+  background-image: url('../../../Content/Ericsson/resources/16px/alignCenter_black_16px.svg');
+}
+.ebIcon_alignLeft {
+  background-image: url('../../../Content/Ericsson/resources/16px/alignLeft_black_16px.svg');
+}
+.ebIcon_alignRight {
+  background-image: url('../../../Content/Ericsson/resources/16px/alignRight_black_16px.svg');
+}
+.ebIcon_cli {
+  background-image: url('../../../Content/Ericsson/resources/16px/CommandLineInterface_black_16px.svg');
+}
+.ebIcon_cli_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/CommandLineInterface_white_16px.svg');
+}
+.ebIcon_grid3x3 {
+  background-image: url('../../../Content/Ericsson/resources/16px/grid3X3_black_16px.svg');
+}
+.ebIcon_grid4x4 {
+  background-image: url('../../../Content/Ericsson/resources/16px/grid4X4_black_16px.svg');
+}
+.ebIcon_gridView {
+  background-image: url('../../../Content/Ericsson/resources/16px/gridView_black_16px.svg');
+}
+.ebIcon_jumpTo {
+  background-image: url('../../../Content/Ericsson/resources/16px/jumpTo_black_16px.svg');
+}
+.ebIcon_security {
+  background-image: url('../../../Content/Ericsson/resources/16px/security_black_16px.svg');
+}
+.ebIcon_security_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/security_white_16px.svg');
+}
+.ebIcon_site {
+  background-image: url('../../../Content/Ericsson/resources/16px/site_black_16px.svg');
+}
+.ebIcon_siteManager {
+  background-image: url('../../../Content/Ericsson/resources/16px/siteManager_black_16px.svg');
+}
+.ebIcon_tip {
+  background-image: url('../../../Content/Ericsson/resources/16px/tip_black_16px.svg');
+}
+.ebIcon_tip_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/tip_white_16px.svg');
+}
+.ebIcon_attach {
+  background-image: url('../../../Content/Ericsson/resources/16px/attach_black_16px.svg');
+}
+.ebIcon_clock {
+  background-image: url('../../../Content/Ericsson/resources/16px/clock_black_16px.svg');
+}
+.ebIcon_clock_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/clock_white_16px.svg');
+}
+.ebIcon_windowMaximize {
+  background-image: url('../../../Content/Ericsson/resources/16px/WindowMaximize_black_16px.svg');
+}
+.ebIcon_windowMinimize {
+  background-image: url('../../../Content/Ericsson/resources/16px/WindowMinimize_black_16px.svg');
+}
+.ebIcon_deprecated {
+  background-image: url('../../../Content/Ericsson/resources/16px/deprecated_16px.svg');
+}
+.ebIcon_obsolete {
+  background-image: url('../../../Content/Ericsson/resources/16px/obsolete_16px.svg');
+}
+.ebIcon_newStatus_blue {
+  background-image: url('../../../Content/Ericsson/resources/16px/newStatus_blue_16px.svg');
+}
+.ebIcon_newStatus_green {
+  background-image: url('../../../Content/Ericsson/resources/16px/newStatus_green_16px.svg');
+}
+.ebIcon_upload {
+  background-image: url('../../../Content/Ericsson/resources/16px/upload_black_16px.svg');
+}
+.ebIcon_activate {
+  background-image: url('../../../Content/Ericsson/resources/16px/activate_black_16px.svg');
+}
+.ebIcon_deactivate {
+  background-image: url('../../../Content/Ericsson/resources/16px/deactivate_black_16px.svg');
+}
+.ebIcon_switchBetween {
+  background-image: url('../../../Content/Ericsson/resources/16px/switchBetween_black_16px.svg');
+}
+.ebIcon_switchBetween_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/switchBetween_white_16px.svg');
+}
+.ebIcon_eye {
+  background-image: url('../../../Content/Ericsson/resources/16px/eye_black_16px.svg');
+}
+.ebIcon_eye_white {
+  background-image: url('../../../Content/Ericsson/resources/16px/eye_white_16px.svg');
+}
+.ebIcon_eyeLine {
+  background-image: url('../../../Content/Ericsson/resources/16px/eyeLine_black_16px.svg');
+}
+
+/*
+ * Ericsson input
+ *
+*/
+.ebInput {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  /*font-size: 1.2rem;*/
+  width: 140px;
+  height: 2.8rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #b3b3b3;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0 0 #cccccc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+.ebInput_wMargin {
+  margin: 6px;
+}
+.ebInput_txtCenter {
+  text-align: center;
+}
+.ebInput_miniW,
+.ebInput_width_mini {
+  width: 40px;
+}
+.ebInput_smallW,
+.ebInput_width_small {
+  width: 80px;
+}
+.ebInput_longW,
+.ebInput_width_long {
+  width: 180px;
+}
+.ebInput_xLongW,
+.ebInput_width_xLong {
+  width: 220px;
+}
+.ebInput_width_full {
+  min-width: 40px;
+  width: 100%;
+}
+.ebInput_noRightSide {
+  border-width: 1px 0 1px 1px;
+  border-radius: 3px 0 0 3px;
+}
+.ebInput_noLeftSide {
+  border-width: 1px 1px 1px 0;
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset 0 1px 0 0 #cccccc;
+}
+.ebInput:hover {
+  border-color: #666666;
+}
+.ebInput[readonly] {
+  cursor: default;
+  box-shadow: none;
+  border-color: #E3E3E3;
+}
+.ebInput[readonly]:hover {
+  border-color: #E3E3E3;
+}
+.ebInput_disabled,
+.ebInput:disabled {
+  color: #B2B2B2;
+  border-color: #B2B2B2;
+  background-color: rgba(0, 0, 0, 0.05);
+  -ms-touch-action: none !important;
+  cursor: not-allowed !important;
+  touch-action: none !important;
+  box-shadow: inset 1px 1px 0 0 #cccccc;
+}
+.ebInput_borderColor {
+  border-color: #b3b3b3;
+}
+.ebInput_borderColor_red {
+  border-color: #e32119;
+}
+.ebInput_status_none {
+  border-color: #b3b3b3;
+}
+.ebInput_status_warning {
+  border-color: #f08a00;
+}
+.ebInput_status_error {
+  border-color: #e32119;
+}
+.ebInput.eb_wMargin + .ebInput-status {
+  margin: -0.2rem 0.8rem 0 0.6rem;
+}
+.ebInput-status {
+  display: block;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.2rem;
+  min-height: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.ebInput-statusOk,
+.ebInput-statusError {
+  vertical-align: middle;
+}
+.ebInput-statusOk:before,
+.ebInput-statusError:before {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.6rem 0 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  content: '';
+  background-repeat: no-repeat;
+}
+.ebInput-statusInfo {
+  vertical-align: middle;
+  color: #8d8d8d;
+}
+.ebInput-statusOk {
+  color: #89ba17;
+  display: none;
+}
+.ebInput-statusOk:before {
+  background-image: url('../../../Content/Ericsson/resources/form/valid_icon.svg');
+}
+.ebInput-statusError {
+  color: #e32119;
+  display: none;
+}
+.ebInput-statusError:before {
+  background-image: url('../../../Content/Ericsson/resources/form/invalid_icon.svg');
+}
+.ebInput-status_none {
+  display: none;
+}
+.ebInput-status_hide .ebInput-statusOk,
+.ebInput-status_hide .ebInput-statusError,
+.ebInput-status_hide .ebInput-statusInfo {
+  display: none;
+}
+.ebInput-status_info .ebInput-statusInfo {
+  display: inline-block;
+}
+.ebInput-status_info .ebInput-statusOk,
+.ebInput-status_info .ebInput-statusError {
+  display: none;
+}
+.ebInput-status_ok .ebInput-statusOk {
+  display: inline-block;
+}
+.ebInput-status_ok .ebInput-statusError,
+.ebInput-status_ok .ebInput-statusInfo {
+  display: none;
+}
+.ebInput-status_error .ebInput-statusError {
+  display: inline-block;
+}
+.ebInput-status_error .ebInput-statusOk,
+.ebInput-status_error .ebInput-statusInfo {
+  display: none;
+}
+.ebInput:not(.ebInput_validation_focusLost):valid + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) .ebInput-statusOk {
+  display: inline-block;
+}
+.ebInput:not(.ebInput_validation_focusLost):invalid:not(.ebInput_borderColor):not(.ebInput_status_warning):not(.ebInput_status_none) {
+  border-color: #e32119;
+}
+.ebInput:not(.ebInput_validation_focusLost):invalid + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) .ebInput-statusError {
+  display: inline-block;
+}
+.ebInput:not(.ebInput_validation_focusLost):invalid + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) .ebInput-statusInfo {
+  display: none;
+}
+.ebInput.ebInput_validation_focusLost:not(:focus):valid + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) .ebInput-statusOk {
+  display: inline-block;
+}
+.ebInput.ebInput_validation_focusLost:not(:focus):invalid:not(.ebInput_borderColor):not(.ebInput_status_warning):not(.ebInput_status_none) {
+  border-color: #e32119;
+}
+.ebInput.ebInput_validation_focusLost:not(:focus):invalid + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) .ebInput-statusError {
+  display: inline-block;
+}
+.ebInput.ebInput_validation_focusLost:not(:focus):invalid + .ebInput-status:not(.ebInput-status_hide):not(.ebInput-status_info):not(.ebInput-status_ok):not(.ebInput-status_error) .ebInput-statusInfo {
+  display: none;
+}
+.ebInputWrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.ebInputWrapper .ebInput {
+  width: 100%;
+}
+.ebInputWrapper-body {
+  position: absolute;
+  top: 30px;
+  display: none;
+  width: 100%;
+}
+.ebInputWrapper-body_rightAlign {
+  right: 0;
+}
+.ebInputWrapper_width_mini {
+  width: 40px;
+}
+.ebInputWrapper_width_small {
+  width: 80px;
+}
+.ebInputWrapper_width_long {
+  width: 180px;
+}
+.ebInputWrapper_width_xLong {
+  width: 220px;
+}
+.ebInputWrapper_width_full {
+  min-width: 40px;
+  width: 100%;
+}
+.ebInput:focus{
+  outline: none;
+  box-shadow: 0 0 2px 1px #4d90fe;
+}
+.ebInput_width_full {
+  min-width: 40px;
+  width: 100%;
+}
+.ebInput_menu_list{
+    -webkit-appearance:menulist;
+}
+
+/*
+ * Ericsson wizard
+ *
+*/
+.ebWizard {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.ebWizard_firstStep .ebWizard-headerStepSelectPrevious {
+  visibility: hidden;
+  pointer-events: none;
+  touch-action: none;
+}
+.ebWizard_firstStep .ebWizard-footerBtnPrevious {
+  display: none;
+}
+.ebWizard_lastStep .ebWizard-headerStepSelectNext {
+  visibility: hidden;
+  pointer-events: none;
+  touch-action: none;
+}
+.ebWizard_lastStep .ebWizard-footerBtnNext {
+  display: none;
+}
+.ebWizard_lastStep .ebWizard-footerBtnFinish {
+  display: inline-block;
+  visibility: visible;
+  pointer-events: inherit;
+  touch-action: inherit;
+}
+.ebWizard-footerBtnFinish {
+  display: none;
+}
+.ebWizard-headerStepSelect,
+.ebWizard-stepList,
+.ebWizard-bodyContainer,
+.ebWizard-footer {
+  position: relative;
+  width: 100%;
+}
+.ebWizard-headerStepSelect,
+.ebWizard-footer {
+  height: 36px;
+}
+.ebWizard-headerStepSelect {
+  position: relative;
+}
+.ebWizard-headerStepSelectPrevious,
+.ebWizard-headerStepSelectNext,
+.ebWizard-headerStepSelectDropBtn,
+.ebWizard-headerStepSelect .ebWizard-step {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ebWizard-headerStepSelectPrevious,
+.ebWizard-headerStepSelectNext,
+.ebWizard-headerStepSelectDropBtn {
+  width: 24px;
+  height: 24px;
+  margin: 2px 12px;
+  border-radius: 100%;
+  background: no-repeat center;
+  background-size: 16px;
+  cursor: pointer;
+}
+.ebWizard-headerStepSelectPrevious,
+.ebWizard-headerStepSelectNext {
+  background-color: #33badd;
+}
+.ebWizard-headerStepSelectPrevious_disabled,
+.ebWizard-headerStepSelectNext_disabled {
+  background-color: #bbbbbb;
+  cursor: default;
+}
+.ebWizard-headerStepSelectPrevious_hidden,
+.ebWizard-headerStepSelectNext_hidden {
+  visibility: hidden;
+  pointer-events: none;
+  touch-action: none;
+}
+.ebWizard-headerStepSelectPrevious {
+  margin-left: 0;
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowLeft_white_16px.svg');
+}
+.ebWizard-headerStepSelectNext {
+  margin-right: 0;
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowRightSmall_white_16px.svg');
+}
+.ebWizard-headerStepSelectDropBtn {
+  margin-left: -36px;
+  background-color: #ffffff;
+  background-image: url('../../../Content/Ericsson/resources/16px/ArrowDownSmall_blue_16px.svg');
+}
+.ebWizard-headerStepSelect .ebWizard-step {
+  width: calc(100% - 72px);
+}
+@media (min-width: 768px) {
+  .ebWizard-headerStepSelect,
+  .ebWizard-headerStepSelectDropBtn {
+    display: none;
+  }
+}
+.ebWizard-step {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  padding: 4px 34px 4px 6px;
+  cursor: pointer;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ebWizard-step_disabled {
+  color: #999999;
+  cursor: default;
+}
+.ebWizard-step_current {
+  color: #ffffff;
+  background-color: #33badd;
+  cursor: default;
+}
+.ebWizard-step_valid:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: '';
+  right: 0;
+  width: 16px;
+  margin-right: 12px;
+  background: url('../../../Content/Ericsson/resources/16px/simple_green_tick.svg') no-repeat center;
+  background-size: 16px;
+}
+@media (min-width: 768px) {
+  .ebWizard-step {
+    max-width: 200px;
+  }
+}
+.ebWizard-stepTitle {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 38px);
+  max-height: 100%;
+}
+.ebWizard-stepNumber {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 2px 8px 2px 6px;
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  border-radius: 100%;
+  background-color: #33badd;
+}
+.ebWizard-step_current .ebWizard-stepNumber {
+  color: #33badd;
+  background-color: #ffffff;
+}
+.ebWizard-step_disabled .ebWizard-stepNumber {
+  background-color: #bbbbbb;
+}
+.ebWizard-stepList {
+  position: absolute;
+  display: none;
+  left: 0;
+  right: 0;
+  width: calc(100% - 72px);
+  list-style: none;
+  margin: 12px auto 0;
+  padding: 0 12px;
+  overflow: auto;
+  z-index: 1500;
+  max-height: calc(100% - 80px);
+  background-color: #ffffff;
+  border: #bfbfbf solid 1px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ebWizard-stepList_open {
+  display: block;
+}
+@media (min-width: 768px) {
+  .ebWizard-stepList {
+    width: 200px;
+    max-height: calc(100% - 49px);
+    float: left;
+    display: block;
+    position: relative;
+    left: inherit;
+    right: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    border: none;
+    z-index: inherit;
+    box-shadow: none ;
+    border-radius: 0;
+  }
+}
+.ebWizard-stepListItem {
+  position: relative;
+  display: block;
+  margin: 12px 0;
+  width: 100%;
+}
+.ebWizard-stepListItem:nth-child(1) .ebWizard-stepNumber:before {
+  content: '1';
+}
+.ebWizard-stepListItem:nth-child(2) .ebWizard-stepNumber:before {
+  content: '2';
+}
+.ebWizard-stepListItem:nth-child(3) .ebWizard-stepNumber:before {
+  content: '3';
+}
+.ebWizard-stepListItem:nth-child(4) .ebWizard-stepNumber:before {
+  content: '4';
+}
+.ebWizard-stepListItem:nth-child(5) .ebWizard-stepNumber:before {
+  content: '5';
+}
+.ebWizard-stepListItem:nth-child(6) .ebWizard-stepNumber:before {
+  content: '6';
+}
+.ebWizard-stepListItem:nth-child(7) .ebWizard-stepNumber:before {
+  content: '7';
+}
+.ebWizard-stepListItem:nth-child(8) .ebWizard-stepNumber:before {
+  content: '8';
+}
+.ebWizard-stepListItem:nth-child(9) .ebWizard-stepNumber:before {
+  content: '9';
+}
+@media (min-width: 992px) {
+  .ebWizard_horizontal .ebWizard-stepList {
+    width: 100%;
+    float: none;
+    height: 36px;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(1) {
+    width: 100%;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(2),
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(2) ~ .ebWizard-stepListItem {
+    width: 50%;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(3),
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(3) ~ .ebWizard-stepListItem {
+    width: 33.3333%;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(4),
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(4) ~ .ebWizard-stepListItem {
+    width: 25%;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(5),
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:nth-last-child(5) ~ .ebWizard-stepListItem {
+    width: 20%;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin: 0;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:before,
+  .ebWizard_horizontal .ebWizard-stepListItem:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    content: '';
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:before {
+    left: 0;
+    border-right: 2px solid #E6E6E6;
+  }
+  .ebWizard_horizontal .ebWizard-stepListItem:first-child:before,
+  .ebWizard_horizontal .ebWizard-stepListItem.ebWizard-step_current:before,
+  .ebWizard_horizontal .ebWizard-stepListItem.ebWizard-step_current + .ebWizard-stepListItem:before {
+    border-right: none;
+  }
+}
+@media (min-width: 992px) {
+  .ebWizard_horizontal .ebWizard-bodyContainer {
+    max-height: calc(100% - 110px);
+    width: auto;
+    float: none;
+    margin-left: 0;
+  }
+}
+.ebWizard-bodyContainer {
+  max-height: calc(100% - 110px);
+  margin: 12px 0;
+  overflow: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 12px;
+}
+@media (min-width: 768px) {
+  .ebWizard-bodyContainer {
+    width: calc(100% - 224px);
+    max-height: calc(100% - 74px);
+    float: left;
+    clear: right;
+    margin-left: 24px;
+  }
+}
+.ebWizard-footer {
+  border-top: 1px solid #E6E6E6;
+  clear: left;
+  margin-bottom: 12px;
+}
+.ebWizard-footerCommandList {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.ebWizard-footerCommandListItem {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  padding: 0;
+  line-height: 2.4rem;
+  margin: 0 12px;
+}
+.ebWizard-footerCommandListItem:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -12px;
+  content: '';
+  border-right: 1px solid #E6E6E6;
+}
+.ebWizard-footerCommandListItem:last-of-type {
+  margin-right: 0;
+}
+.ebWizard-footerCommandListItem:last-of-type:after {
+  display: none;
+}
+
+/*
+ * Ericsson dialog
+ *
+*/
+.ebDialog {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-attachment: fixed;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ebDialog-holder {
+  position: relative;
+  height: calc(100% - 2 * 50px);
+  max-height: calc(100% - 2 * 50px);
+  max-width: calc(100% - 2 * 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  .ebDialog-holder {
+    height: calc(100% - 2 * 25px);
+    max-height: calc(100% - 2 * 25px);
+  }
+}
+.ebDialogBox {
+  position: relative;
+  background: #ffffff;
+  z-index: 1500;
+  min-width: 300px;
+  max-width: 768px;
+  box-sizing: border-box;
+  border: 1px solid silver;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px #999999;
+}
+@media (min-width: 1024px) {
+  .ebDialogBox {
+    max-width: 992px;
+  }
+}
+@media (min-width: 1280px) {
+  .ebDialogBox {
+    max-width: 1024px;
+  }
+}
+.ebDialogBox-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 14px;
+  right: 12px;
+  z-index: 1;
+}
+.ebDialogBox-content {
+  max-height: 100%;
+  padding-right: 16px;
+}
+.ebDialogBox-contentBlock {
+  position: relative;
+  margin: 25px;
+  height: calc(100% - 2 * 25px - 36px);
+  max-height: calc(100% - 2 * 25px - 36px);
+  box-sizing: border-box;
+  line-height: 14px;
+  /* Fixes a weird scrollbar issue which had 1px slack */
+}
+.ebDialogBox-contentBlock:first-child:last-child {
+  height: calc(100% - 2 * 25px);
+  max-height: calc(100% - 2 * 25px);
+}
+.ebDialogBox-contentBlock_type_warning {
+  padding-left: 37px;
+  background: url(../../../Content/Ericsson/resources/dialogs/warning_icon.svg) left top no-repeat;
+}
+.ebDialogBox-contentBlock_type_error {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/error_icon.svg') left top no-repeat;
+}
+.ebDialogBox-contentBlock_type_confirmation {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/confirmation_icon.svg') left top no-repeat;
+}
+.ebDialogBox-contentBlock_type_information {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/information_icon.svg') left top no-repeat;
+}
+.ebDialogBox-contentBlock .ebDialogBox-icon {
+  /* backwards compatibility for old dialog mark-up, when icon was inside the content.
+                       Icon had to be moved outside of content to avoid horizontal scrollbar CDS-4941 */
+  top: -9px;
+  right: -9px;
+}
+.ebDialogBox-actionBlock {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 6px 0;
+}
+.ebDialogBox-actionBlock > * {
+  margin: 0 4px;
+}
+.ebDialogBox-primaryText {
+  color: #1a1a1a;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 25px;
+}
+.ebDialogBox-primaryText_type_warning {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/warning_icon.svg') left center no-repeat;
+}
+.ebDialogBox-primaryText_type_error {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/error_icon.svg') left center no-repeat;
+}
+.ebDialogBox-primaryText_type_confirmation {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/confirmation_icon.svg') left center no-repeat;
+}
+.ebDialogBox-primaryText_type_information {
+  padding-left: 37px;
+  background: url('../../../Content/Ericsson/resources/dialogs/information_icon.svg') left center no-repeat;
+}
+.ebDialogBox-secondaryText {
+  color: #8d8d8d;
+}
+.ebDialogBox-thirdText {
+  color: #999999;
+}
+@media (max-width: 480px) {
+  .ebDialog {
+    display: block;
+  }
+  .ebDialog-holder {
+    display: block;
+    margin: 15px;
+    max-width: calc(100% - 2 * 15px);
+    height: calc(100% - 2 * 15px);
+    max-height: calc(100% - 2 * 15px);
+  }
+  .ebDialogBox {
+    position: relative;
+    display: block;
+    margin: 0;
+    height: 100%;
+  }
+  .ebDialogBox-contentBlock {
+    margin: 15px 15px 0;
+    padding: 15px;
+    height: calc(100% - 15px - 36px);
+    max-height: calc(100% - 15px - 36px);
+  }
+  .ebDialogBox-contentBlock_type_warning,
+  .ebDialogBox-contentBlock_type_error,
+  .ebDialogBox-contentBlock_type_confirmation,
+  .ebDialogBox-contentBlock_type_information {
+    background-position-y: 15px;
+    padding-left: 37px;
+  }
+  .ebDialogBox-contentBlock .ebDialogBox-icon {
+    top: -1px;
+    right: -3px;
+  }
+}
+
+/*
+ * Ericsson info message
+ *
+*/
+ .elShowcaseLib-wGuidelineBlock {
+  position: relative;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border-radius: 3px;
+  /*font-size: 0;*/
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .elShowcaseLib-wGuidelineBlock {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  .elShowcaseLib-wGuidelineBlock {
+    width: 85%;
+  }
+}
+.elShowcaseLib-wGuidelineBlock-header,
+.elShowcaseLib-wGuidelineBlock-content {
+  /*font-size: 1.2rem;*/
+  height: 100%;
+}
+.elShowcaseLib-wGuidelineBlock-header {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+  content: '';
+}
+.elShowcaseLib-wGuidelineBlock-header:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -3px;
+  right: 0;
+  content: '';
+  width: 16px;
+  margin: 3px auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.elShowcaseLib-wGuidelineBlock-content {
+  height: 100%;
+  width: calc(100% - 26px);
+  padding: 0 10px;
+  margin-left: 26px;
+  box-sizing: border-box;
+}
+.elShowcaseLib-wGuidelineBlock-content .elShowcaseLib-wCodeBlock {
+  width: 100%;
+}
+.elShowcaseLib-wGuidelineBlock_tip {
+  border: 3px solid #a1c845;
+}
+.elShowcaseLib-wGuidelineBlock_tip .elShowcaseLib-wGuidelineBlock-header {
+  background-color: #a1c845;
+}
+.elShowcaseLib-wGuidelineBlock_tip .elShowcaseLib-wGuidelineBlock-header:before {
+  background-image : url(../../../Content/Ericsson/resources/icons/tip_white.svg);
+}
+.elShowcaseLib-wGuidelineBlock_advice {
+  border: 3px solid #f08a00;
+}
+.elShowcaseLib-wGuidelineBlock_advice .elShowcaseLib-wGuidelineBlock-header {
+  background-color: #f08a00;
+}
+.elShowcaseLib-wGuidelineBlock_advice .elShowcaseLib-wGuidelineBlock-header:before {
+  background-image: url(../../../Content/Ericsson/resources/icons/advice.svg);
+}
+.elShowcaseLib-wGuidelineBlock_widget {
+  border: 3px solid #33badd;
+}
+.elShowcaseLib-wGuidelineBlock_widget .elShowcaseLib-wGuidelineBlock-header {
+  background-color: #33badd;
+}
+.elShowcaseLib-wGuidelineBlock_widget .elShowcaseLib-wGuidelineBlock-header:before {
+  background-image: url(../../../Content/Ericsson/resources/icons/widget_rev.svg)
+}
+
+/*
+ * Ericsson loader
+ *
+*/
+.ebLoader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+}
+.ebLoader-Dots {
+  position: relative;
+  margin: 0 20px;
+}
+.ebLoader-Dots,
+.ebLoader-Dots:before,
+.ebLoader-Dots:after {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #ca9bc1;
+  border-radius: 2px;
+  -webkit-animation-duration: 0.9s;
+  -moz-animation-duration: 0.9s;
+  -ms-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -ms-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.ebLoader-Dots:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  -ms-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.ebLoader-Dots:after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -ms-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.ebLoader-Dots_size_small {
+  margin: 0 10px;
+}
+.ebLoader-Dots_size_small,
+.ebLoader-Dots_size_small:before,
+.ebLoader-Dots_size_small:after {
+  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+}
+.ebLoader-Dots_size_small:before {
+  left: -10px;
+}
+.ebLoader-Dots_size_small:after {
+  right: -10px;
+}
+.ebLoader-Dots_size_big {
+  margin: 0 30px;
+}
+.ebLoader-Dots_size_big,
+.ebLoader-Dots_size_big:before,
+.ebLoader-Dots_size_big:after {
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+}
+.ebLoader-Dots_size_big:before {
+  left: -30px;
+}
+.ebLoader-Dots_size_big:after {
+  right: -30px;
+}
+.ebLoader-Dots_color_darkGreen,
+.ebLoader-Dots_color_darkGreen:before,
+.ebLoader-Dots_color_darkGreen:after {
+  background-color: #99c0bf;
+  -webkit-animation-name: ebLoader_pulseDarkGreen;
+  -moz-animation-name: ebLoader_pulseDarkGreen;
+  -ms-animation-name: ebLoader_pulseDarkGreen;
+  animation-name: ebLoader_pulseDarkGreen;
+}
+.ebLoader-Dots_color_paleBlue,
+.ebLoader-Dots_color_paleBlue:before,
+.ebLoader-Dots_color_paleBlue:after {
+  background-color: #99ddee;
+  -webkit-animation-name: ebLoader_pulsePaleBlue;
+  -moz-animation-name: ebLoader_pulsePaleBlue;
+  -ms-animation-name: ebLoader_pulsePaleBlue;
+  animation-name: ebLoader_pulsePaleBlue;
+}
+.ebLoader-Holder {
+  position: relative;
+  text-align: center;
+  height: 100%;
+}
+.ebLoader-Holder .ebLoader-Dots {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 28px);
+}
+.ebLoader-Holder .ebLoader-Dots_size_small {
+  top: calc(50% - 4px);
+  left: calc(50% - 14px);
+}
+.ebLoader-Holder .ebLoader-Dots_size_big {
+  top: calc(50% - 12px);
+  left: calc(50% - 42px);
+}
+@-webkit-keyframes pulse {
+  0% {
+    background-color: #ca9bc1;
+  }
+  25% {
+    background-color: #953882;
+  }
+  75% {
+    background-color: #ca9bc1;
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    background-color: #ca9bc1;
+  }
+  25% {
+    background-color: #953882;
+  }
+  75% {
+    background-color: #ca9bc1;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: #ca9bc1;
+  }
+  25% {
+    background-color: #953882;
+  }
+  75% {
+    background-color: #ca9bc1;
+  }
+}
+@-webkit-keyframes ebLoader_pulseDarkGreen {
+  0% {
+    background-color: #99c0bf;
+  }
+  25% {
+    background-color: #33817f;
+  }
+  75% {
+    background-color: #99c0bf;
+  }
+}
+@-moz-keyframes ebLoader_pulseDarkGreen {
+  0% {
+    background-color: #99c0bf;
+  }
+  25% {
+    background-color: #33817f;
+  }
+  75% {
+    background-color: #99c0bf;
+  }
+}
+@keyframes ebLoader_pulseDarkGreen {
+  0% {
+    background-color: #99c0bf;
+  }
+  25% {
+    background-color: #33817f;
+  }
+  75% {
+    background-color: #99c0bf;
+  }
+}
+@-webkit-keyframes ebLoader_pulsePaleBlue {
+  0% {
+    background-color: #99ddee;
+  }
+  25% {
+    background-color: #33badd;
+  }
+  75% {
+    background-color: #99ddee;
+  }
+}
+@-moz-keyframes ebLoader_pulsePaleBlue {
+  0% {
+    background-color: #99ddee;
+  }
+  25% {
+    background-color: #33badd;
+  }
+  75% {
+    background-color: #99ddee;
+  }
+}
+@keyframes ebLoader_pulsePaleBlue {
+  0% {
+    background-color: #99ddee;
+  }
+  25% {
+    background-color: #33badd;
+  }
+  75% {
+    background-color: #99ddee;
+  }
+}

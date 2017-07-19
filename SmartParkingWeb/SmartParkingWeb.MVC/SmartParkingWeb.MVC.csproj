@@ -159,6 +159,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loader.css" />
     <Content Include="Content\img\measurments.png" />
     <Content Include="Content\img\settings.png" />
     <Content Include="Content\img\statistic.png" />
@@ -220,6 +221,7 @@
     <Content Include="Views\Home\Parking.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutWithoutNavbar.cshtml" />
+    <Content Include="Views\Home\Settings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

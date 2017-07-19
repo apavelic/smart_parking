@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/loader.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -29,6 +30,14 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+    </div>
+
+    <div id="FormPostLoaderModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div style="text-align:center;">
+                <span class="ebLoader-Dots ebLoader-Dots_color_paleBlue"></span>
+            </div>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

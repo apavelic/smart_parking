@@ -28,4 +28,11 @@ public class ParkingService {
         List<Parking> parking = server.getParking();
         return gson.toJson(parking);
     }
+
+    @GET
+    @Path("/parkingStatus")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String isParkingOnline() {
+        return Boolean.toString(server.isSmartParkingOnline());
+    }
 }
