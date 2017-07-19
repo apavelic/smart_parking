@@ -1,6 +1,7 @@
 package main.java.com.pavelic.smartparking;
 
 import main.java.com.pavelic.smartparking.services.ParkingService;
+import main.java.com.pavelic.smartparking.services.ParkingSettingsService;
 import main.java.com.pavelic.smartparking.services.ParkingStateService;
 
 import javax.ws.rs.ApplicationPath;
@@ -22,6 +23,7 @@ public class AppConfig extends Application {
         HashSet h = new HashSet<Class<?>>();
         h.add(ParkingService.class);
         h.add(ParkingStateService.class);
+        h.add(ParkingSettingsService.class);
         return h;
     }
 }

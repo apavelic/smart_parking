@@ -9,8 +9,8 @@
 }
 
 <div class="container">
-    <div class="col-md-3 statistic-filter">
-        <span class="col-md-12">Date from:</span>
+    <div class="col-md-3">
+        <span class="col-md-12 date-label">Date from:</span>
         <div class='col-md-12'>
             <div class="form-group">
                 <div class='input-group date' id='dateFrom'>
@@ -21,7 +21,9 @@
                 </div>
             </div>
         </div>
-        <span class="col-md-12">Date to:</span>
+    </div>
+    <div class="col-md-3">
+        <span class="col-md-12 date-label">Date to:</span>
         <div class='col-md-12'>
             <div class="form-group">
                 <div class='input-group date' id='dateTo'>
@@ -32,14 +34,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 checkbox">
+    </div>
+    <div class="col-md-3">
+        <div class="checkbox col-md-12 statistic-padding">
             <label><input type="checkbox" id="cbShowAll">Show reports for all time</label>
         </div>
-        <div class="col-md-6">
+    </div>
+    <div class="col-md-3">
+        <div class="col-md-12 statistic-padding">
             <input type="button" value="Show Report" class="btn btn-info" id="btnStatistics" />
         </div>
     </div>
 </div>
+
+<div class="col-md-12" id="multiple_chart" style="height: 400px; min-width: 310px"></div>
 
 
 @section scripts {

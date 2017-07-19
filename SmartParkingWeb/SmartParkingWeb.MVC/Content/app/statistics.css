@@ -2,6 +2,12 @@
     width: 0 !important;
 }
 
-.statistic-filter {
-    height: 100%;
+@media screen and (min-width: 992px) {
+    .statistic-padding {
+        padding-top: 7%
+    }
+}
+
+#multiple_chart {
+    margin-top: 30px;
 }

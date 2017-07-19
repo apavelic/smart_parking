@@ -1,7 +1,7 @@
 package main.java.com.pavelic.smartparking.servlets;
 
+import main.java.com.pavelic.smartparking.models.ParkingSettings;
 import main.java.com.pavelic.smartparking.server.Server;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,14 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Andrej on 15.07.2017..
  */
 @WebServlet(name = "RestServlet", urlPatterns = "/")
 public class RestServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Server.start();
+
+        Runnable task = () -> Server.start();
+
+        Server.getServer().updateSettings(new ParkingSettings(10));
+
+        ExecutorService es = Executors.newFixedThreadPool(4);
+        es.execute(new Thread(task));
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();

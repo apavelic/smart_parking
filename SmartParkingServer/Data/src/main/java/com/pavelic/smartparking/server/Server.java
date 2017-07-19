@@ -14,6 +14,7 @@ package main.java.com.pavelic.smartparking.server;
         import java.net.Socket;
         import java.text.ParseException;
         import java.util.ArrayList;
+        import java.util.Calendar;
         import java.util.Date;
         import java.util.List;
         import java.util.concurrent.ExecutorService;
@@ -93,6 +94,9 @@ public class Server {
     private void seed() {
         MongoCollection<Document> parking = db.getCollection("parking");
         parking.insertMany(getInitialParking());
+
+        MongoCollection<Document> settings = db.getCollection("settings");
+        settings.insertOne(new Document("price", 5));
     }
 
     private List<Document> getInitialParking() {
@@ -170,7 +174,8 @@ public class Server {
         BasicDBObject query;
         MongoCursor<Document> cursor;
 
-        if(from != null || to != null) {
+        if(from != null && to != null) {
+            to = IncrementOneDay(to);
             query = new BasicDBObject("date", new BasicDBObject("$gt", from).append("$lt", to));
             cursor = model.find(query).iterator();
         } else {
@@ -188,5 +193,35 @@ public class Server {
         }
 
         return state;
+    }
+
+    private Date IncrementOneDay(Date to) {
+        Calendar c =Calendar.getInstance();
+        c.setTime(to);
+        c.add(Calendar.DATE, 1);
+
+        return c.getTime();
+    }
+
+    public ParkingSettings getSettings() {
+        MongoCollection<Document>  model = db.getCollection("settings");
+
+        ParkingSettings settings = new ParkingSettings();
+
+        MongoCursor<Document> cursor = model.find().iterator();
+
+        if (cursor.hasNext()) {
+            Document doc = cursor.next();
+            double price = doc.getDouble("price");
+            settings.setPrice(price);
+        }
+
+        return settings;
+    }
+
+    public void updateSettings(ParkingSettings settings) {
+        MongoCollection<Document> model = db.getCollection("settings");
+        Document query = model.find().first();
+        model.updateOne(query, new Document("$set", new Document("price", settings.getPrice())));
     }
 }
