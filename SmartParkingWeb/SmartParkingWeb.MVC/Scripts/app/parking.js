@@ -27,6 +27,24 @@
                 });
             }
         });
+
+        $.ajax({
+            url: "/Home/GetParkingStatus",
+            dataType: "text",
+            method: "GET",
+            success: function (data) {
+                $(".parking-status-color").removeClass("red").removeClass("green");
+
+                if (data == "true") {
+                    $(".parking-status-color").addClass("green");
+                    $(".parking-status-text").html("ONLINE");
+                } else {
+                    $(".parking-status-color").addClass("red");
+                    $(".parking-status-text").html("OFFLINE");
+                }
+                console.log(data);
+            }
+        });
     }
 }
 

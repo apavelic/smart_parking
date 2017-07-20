@@ -24,6 +24,15 @@ namespace SmartParkingWeb.Core.Services
 
             return model;
         }
+        public string GetParkingStatus()
+        {
+            RestClient client = new RestClient("http://localhost:8080/Rest");
+            RestRequest request = new RestRequest("parking/parkingStatus", Method.GET);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
 
         public SettingsViewModel GetSettings()
         {
@@ -82,15 +91,17 @@ namespace SmartParkingWeb.Core.Services
             return chart;
         }
 
-        private Dictionary<DateTime, double> PrepareHistoricalHighchart(IEnumerable<StateViewModel> model)
+        private Dictionary<double, double> PrepareHistoricalHighchart(IEnumerable<StateViewModel> model)
         {
             var usedDates = model.Select(x => x.Date.Date).Distinct();
             var usedParkings = model.Select(x => x.ParkingId).Distinct();
 
-            Dictionary<DateTime, double> parkingStateDictionary = new Dictionary<DateTime, double>();
+            Dictionary<double, double> parkingStateDictionary = new Dictionary<double, double>();
 
             foreach (var date in usedDates)
             {
+                double milliseconds = date.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+
                 foreach (var parkingId in usedParkings)
                 {
                     IEnumerable<StateViewModel> currentParkingStateByDate = model.Where(x => x.Date.Date == date && x.ParkingId == parkingId);
@@ -100,14 +111,15 @@ namespace SmartParkingWeb.Core.Services
                         if (state.State == Enumerations.ParkingStateEnum.NOTFREE)
                         {
                             var stateFree = currentParkingStateByDate.FirstOrDefault(x => x.Date >= state.Date && x.ParkingId == parkingId && x.State == Enumerations.ParkingStateEnum.FREE);
-
+                            
                             if (stateFree != null)
                             {
                                 TimeSpan time = stateFree.Date - state.Date;
 
-                                if (parkingStateDictionary.ContainsKey(date) == false)
+
+                                if (parkingStateDictionary.ContainsKey(milliseconds) == false)
                                 {
-                                    parkingStateDictionary.Add(date, 0);
+                                    parkingStateDictionary.Add(milliseconds, 0);
                                 }
 
                                 int hours = hours = (int)Math.Floor(time.TotalMinutes / 60);
@@ -118,13 +130,13 @@ namespace SmartParkingWeb.Core.Services
                                     hours++;
                                 }
 
-                                parkingStateDictionary[date] += hours;
+                                parkingStateDictionary[milliseconds] += hours;
                             }
                         }
                     }
                 }
 
-                parkingStateDictionary[date] *= GetSettings().Price;
+                parkingStateDictionary[milliseconds] *= GetSettings().Price;
             }
 
             return parkingStateDictionary;

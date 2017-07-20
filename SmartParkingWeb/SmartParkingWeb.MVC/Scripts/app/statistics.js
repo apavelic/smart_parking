@@ -1,7 +1,8 @@
 ﻿var statisticmanager = {
     seriesOptions: [],
-    minHours: 100,
+    minHours: 100000,
     maxHours: 0,
+    minProfit: 100000,
     init: function () {
         this.setDatePicker();
         this.addListeners();
@@ -38,6 +39,12 @@
         }
 
         $.ajax({
+            beforeSend: function () {
+                statisticmanager.showLoader(true);
+            },
+            complete: function () {
+                statisticmanager.showLoader(false);
+            },
             url: "/Home/GetStatistics",
             data: data,
             dataType: "text",
@@ -46,9 +53,8 @@
                 var data = $.parseJSON(jsonString);
                 var seriesOptions = statisticmanager.prepareMultipleHighchartData(data.MultipleHighchartsData);
                 statisticmanager.showMultipleHighchart(seriesOptions);
-                //seriesOptions = statisticmanager.prepareHistoricalHighchartData(data.HistoricalHighchartsData);
-                //statisticmanager.showHistoricalHighchart(seriesOptions);
-
+                seriesOptions = statisticmanager.prepareHistoricalHighchartData(data.HistoricalHighchartsData);
+                statisticmanager.showHistoricalHighchart(seriesOptions);
             }
         });
 
@@ -86,25 +92,31 @@
     },
     prepareHistoricalHighchartData: function (data) {
         var array = $.map(data, function (value, index) {
-            return [[index, value]];
+            return [[Number(index), value]]
+        });
+
+        $(array).each(function (key, value) {
+            if (value[1] < statisticmanager.minProfit) {
+                statisticmanager.minProfit = value[1];
+            }
         });
 
         return array;
     },
     setDatePicker: function () {
 
-        var date = new Date();
-        var tomorrow = new Date();
-        tomorrow.setDate(date.getDate() + 1);
+        var today = new Date();
+        var yesterday = new Date();
+        yesterday.setDate(today.getDate() - 1);
 
         $('#dateFrom').datetimepicker({
             format: 'DD.MM.YYYY',
-            defaultDate: date
+            defaultDate: yesterday
         });
         $('#dateTo').datetimepicker({
             useCurrent: false, //Important! See issue #1075
             format: 'DD.MM.YYYY',
-            defaultDate: tomorrow
+            defaultDate: today
         });
         $("#dateFrom").on("dp.change", function (e) {
             var date = $("#dateFrom").data("date");
@@ -166,64 +178,55 @@
 
     },
     showHistoricalHighchart: function (data) {
-        //Highcharts.chart('detail-container', {
-        //    chart: {
-        //        marginBottom: 120,
-        //        reflow: false,
-        //        marginLeft: 50,
-        //        marginRight: 20,
-        //        style: {
-        //            position: 'absolute'
-        //        }
-        //    },
-        //    credits: {
-        //        enabled: false
-        //    },
-        //    title: {
-        //        text: 'Historical parking profit'
-        //    },
-        //    xAxis: {
-        //        type: 'datetime'
-        //    },
-        //    yAxis: {
-        //        title: {
-        //            text: null
-        //        },
-        //        maxZoom: 0.1
-        //    },
-        //    tooltip: {
-        //        formatter: function () {
-        //            var point = this.points[0];
-        //            return '<b>' + point.series.name + '</b><br/>' + Highcharts.dateFormat('%A %B %e %Y', this.x) + ':<br/>' +
-        //                '1 USD = ' + Highcharts.numberFormat(point.y, 2) + ' EUR';
-        //        },
-        //        shared: true
-        //    },
-        //    legend: {
-        //        enabled: false
-        //    },
-        //    plotOptions: {
-        //        series: {
-        //            marker: {
-        //                enabled: false,
-        //                states: {
-        //                    hover: {
-        //                        enabled: true,
-        //                        radius: 3
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    },
-        //    series: [{
-        //        name: 'Ilica 242',
-        //        data: data
-        //    }],
-        //    exporting: {
-        //        enabled: false
-        //    }
-
-        //})
+        Highcharts.chart('historical_chart', {
+            chart: {
+                type: 'spline'
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Profit per day report'
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    month: '%e. %b',
+                    year: '%b'
+                },
+                title: {
+                    text: 'Date'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Profit (HRK)'
+                },
+                min: statisticmanager.minProfit - 50
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x:%e. %b}: {point.y:.2f} HRK'
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [{
+                name: 'Parking location: Ilica 242',
+                data: data
+            }]
+        });
+    },
+    showLoader: function (value) {
+        if (value) {
+            $('#FormPostLoaderModal').modal({ backdrop: 'static', keyboard: false }, 'show');
+        } else {
+            $('#FormPostLoaderModal').modal('hide');
+        }
     }
 }
 

@@ -37,6 +37,12 @@ public class Server {
     private MongoDatabase db;
     private MongoClient mongo;
 
+    public static boolean isSmartParkingOnline() {
+        return smartParkingIsOnline;
+    }
+
+    private static boolean smartParkingIsOnline = false;
+
     public Server() {
         try {
             connectToDatabase();
@@ -61,6 +67,7 @@ public class Server {
             System.out.println("SERVER STARTED ON PORT: " + PORT);
             socket.accept();
             System.out.println("Smart parking is ONLINE");
+            smartParkingIsOnline = true;
 
             while(true) {
                 try {

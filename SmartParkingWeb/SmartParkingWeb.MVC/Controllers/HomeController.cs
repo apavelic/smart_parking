@@ -34,9 +34,26 @@ namespace SmartParkingWeb.Web.Controllers
             return View();
         }
 
+        public ActionResult Settings()
+        {
+            return View(service.GetSettings());
+        }
+
+        [HttpPost]
+        public ActionResult Settings(SettingsViewModel settings)
+        {
+            service.UpdateSettings(settings);   
+            return RedirectToAction("Index");
+        }
+
         public JsonResult GetParking()
         {
             return Json(service.GetParking(), JsonRequestBehavior.AllowGet);
+        }
+
+        public string GetParkingStatus()
+        {
+            return service.GetParkingStatus();
         }
 
         public string GetStatistics(string from = null, string to = null)
