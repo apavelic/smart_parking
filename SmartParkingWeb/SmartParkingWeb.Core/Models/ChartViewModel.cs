@@ -8,13 +8,15 @@ namespace SmartParkingWeb.Core.Models
 {
     public class ChartViewModel
     {
-        public Dictionary<int, Dictionary<double, int>> MultipleHighchartsData { get; set; }
-        public Dictionary<double, double> HistoricalHighchartsData { get; set; }
+        public Dictionary<int, Dictionary<double, int>> MultipleHighchartData { get; set; }
+        public Dictionary<double, double> HistoricalHighchartData { get; set; }
+        public Dictionary<string, double> HistogramHighchartData { get; set; }
 
         public ChartViewModel()
         {
-            MultipleHighchartsData = new Dictionary<int, Dictionary<double, int>>();
-            HistoricalHighchartsData = new Dictionary<double, double>();
+            MultipleHighchartData = new Dictionary<int, Dictionary<double, int>>();
+            HistoricalHighchartData = new Dictionary<double, double>();
+            HistogramHighchartData = new Dictionary<string, double>();
         }
     }
 }
