@@ -17,5 +17,17 @@ namespace SmartParkingWeb.MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_Error()
+        {
+            Exception exception = Server.GetLastError();
+            Response.Clear();
+
+            if (exception != null)
+            {
+                Server.ClearError();
+                Response.Redirect($"~/Error/Index/?message={exception.Message}");
+            }
+        }
     }
 }

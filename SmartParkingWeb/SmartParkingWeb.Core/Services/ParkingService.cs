@@ -25,6 +25,7 @@ namespace SmartParkingWeb.Core.Services
 
             return model;
         }
+
         public string GetParkingStatus()
         {
             RestClient client = new RestClient("http://localhost:8080/Rest");
@@ -86,9 +87,11 @@ namespace SmartParkingWeb.Core.Services
             IEnumerable<StateViewModel> model = GetParkingStateHistory(from, to).OrderBy(x => x.Date);
 
             ChartViewModel chart = new ChartViewModel();
-            chart.MultipleHighchartData = PrepareMultipleHighchart(model);
-            chart.HistoricalHighchartData = PrepareHistoricalHighchart(model);
-            chart.HistogramHighchartData = PrepareHistogramHighchart(model);
+
+            Parallel.Invoke(
+                () => chart.MultipleHighchartData = PrepareMultipleHighchart(model),
+                () => chart.HistoricalHighchartData = PrepareHistoricalHighchart(model),
+                () => chart.HistogramHighchartData = PrepareHistogramHighchart(model));
 
             return chart;
         }
