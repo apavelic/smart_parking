@@ -150,7 +150,7 @@
                 text: 'Parking occupancy report'
             },
             tooltip: {
-                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y} hours</b><br/>',
                 valueDecimals: 2,
                 split: true
             },
