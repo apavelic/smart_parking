@@ -26,7 +26,6 @@
         });
 
     },
-
     getStatistics: function () {
 
         var data = null;
@@ -51,10 +50,18 @@
             method: "GET",
             success: function (jsonString) {
                 var data = $.parseJSON(jsonString);
-                var seriesOptions = statisticmanager.prepareMultipleHighchartData(data.MultipleHighchartsData);
+                $(".chart").addClass("chart-options");
+
+                var seriesOptions = statisticmanager.prepareMultipleHighchartData(data.MultipleHighchartData);
                 statisticmanager.showMultipleHighchart(seriesOptions);
-                seriesOptions = statisticmanager.prepareHistoricalHighchartData(data.HistoricalHighchartsData);
+
+                seriesOptions = statisticmanager.prepareHistoricalHighchartData(data.HistoricalHighchartData);
                 statisticmanager.showHistoricalHighchart(seriesOptions);
+
+                statisticmanager.minProfit = 100000;
+
+                seriesOptions = statisticmanager.prepareHistogramHighchartData(data.HistogramHighchartData);
+                statisticmanager.showHistogramHighchart(seriesOptions);
             }
         });
 
@@ -103,44 +110,18 @@
 
         return array;
     },
-    setDatePicker: function () {
-
-        var today = new Date();
-        var yesterday = new Date();
-        yesterday.setDate(today.getDate() - 1);
-
-        $('#dateFrom').datetimepicker({
-            format: 'DD.MM.YYYY',
-            defaultDate: yesterday
+    prepareHistogramHighchartData: function (data) {
+        var array = $.map(data, function (value, index) {
+            return [[index, value]];
         });
-        $('#dateTo').datetimepicker({
-            useCurrent: false, //Important! See issue #1075
-            format: 'DD.MM.YYYY',
-            defaultDate: today
-        });
-        $("#dateFrom").on("dp.change", function (e) {
-            var date = $("#dateFrom").data("date");
-            var arr = date.split(".");
-            var day = Number(arr[0]) + 1;
 
-            var minDate = new Date(arr[2], arr[1] - 1, day);
-
-            if ($("#dateTo").data("date") < $("#dateFrom").data("date") || !$("#dateTo").data().hasOwnProperty('date')) {
-                date = new Date(arr[2], arr[1] - 1, day);
-                $("#dateTo").data("DateTimePicker").date(minDate);
+        $(array).each(function (key, value) {
+            if (value[1] < statisticmanager.minProfit) {
+                statisticmanager.minProfit = value[1];
             }
-            $('#dateTo').data("DateTimePicker").minDate(minDate);
         });
 
-        $("#dateTo").on("dp.change", function (e) {
-            var date = $("#dateTo").data("date");
-            var arr = date.split(".");
-            var day = Number(arr[0]) - 1;
-
-            var maxDate = new Date(arr[2], arr[1] - 1, day);
-            $('#dateFrom').data("DateTimePicker").maxDate(maxDate);
-        });
-
+        return array;
     },
     showMultipleHighchart: function (data) {
         Highcharts.stockChart('multiple_chart', {
@@ -220,6 +201,97 @@
                 data: data
             }]
         });
+    },
+    showHistogramHighchart: function (data) {
+        Highcharts.chart('histogram_chart', {
+            chart: {
+                type: 'column'
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: 'Profit per month report'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Profit (HRK)'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '<b>{point.y:.2f} HRK</b>'
+            },
+            series: [{
+                name: 'Months',
+                data: data,
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.2f} HRK', 
+                    y: 10,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+    },
+    setDatePicker: function () {
+
+        var today = new Date();
+        var yesterday = new Date();
+        yesterday.setDate(today.getDate() - 1);
+
+        $('#dateFrom').datetimepicker({
+            format: 'DD.MM.YYYY',
+            defaultDate: yesterday
+        });
+        $('#dateTo').datetimepicker({
+            useCurrent: false, //Important! See issue #1075
+            format: 'DD.MM.YYYY',
+            defaultDate: today,
+            maxDate: today
+        });
+        $("#dateFrom").on("dp.change", function (e) {
+            var date = $("#dateFrom").data("date");
+            var arr = date.split(".");
+            var day = Number(arr[0]) + 1;
+
+            var minDate = new Date(arr[2], arr[1] - 1, day);
+
+            if ($("#dateTo").data("date") < $("#dateFrom").data("date") || !$("#dateTo").data().hasOwnProperty('date')) {
+                date = new Date(arr[2], arr[1] - 1, day);
+                $("#dateTo").data("DateTimePicker").date(minDate);
+            }
+            $('#dateTo').data("DateTimePicker").minDate(minDate);
+        });
+
+        $("#dateTo").on("dp.change", function (e) {
+            var date = $("#dateTo").data("date");
+            var arr = date.split(".");
+            var day = Number(arr[0]) - 1;
+
+            var maxDate = new Date(arr[2], arr[1] - 1, day);
+            $('#dateFrom').data("DateTimePicker").maxDate(maxDate);
+        });
+
     },
     showLoader: function (value) {
         if (value) {

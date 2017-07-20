@@ -7,6 +7,7 @@ using SmartParkingWeb.Core.Models;
 using RestSharp;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace SmartParkingWeb.Core.Services
 {
@@ -85,10 +86,62 @@ namespace SmartParkingWeb.Core.Services
             IEnumerable<StateViewModel> model = GetParkingStateHistory(from, to).OrderBy(x => x.Date);
 
             ChartViewModel chart = new ChartViewModel();
-            chart.MultipleHighchartsData = PrepareMultipleHighchart(model);
-            chart.HistoricalHighchartsData = PrepareHistoricalHighchart(model);
+            chart.MultipleHighchartData = PrepareMultipleHighchart(model);
+            chart.HistoricalHighchartData = PrepareHistoricalHighchart(model);
+            chart.HistogramHighchartData = PrepareHistogramHighchart(model);
 
             return chart;
+        }
+
+        private Dictionary<string, double> PrepareHistogramHighchart(IEnumerable<StateViewModel> model)
+        {
+            var usedMonths = model.Select(x => x.Date.Month).Distinct();
+            var usedParkings = model.Select(x => x.ParkingId).Distinct();
+
+            Dictionary<string, double> parkingStateDictionary = new Dictionary<string, double>();
+
+
+            foreach (var monthNumber in usedMonths)
+            {
+                string month = new DateTime(2000, monthNumber, 1).ToString("MMM", new CultureInfo("en-US"));
+
+                foreach (var parkingId in usedParkings)
+                {
+                    IEnumerable<StateViewModel> currentParkingStateByDate = model.Where(x => x.Date.Month == monthNumber && x.ParkingId == parkingId);
+
+                    foreach (StateViewModel state in currentParkingStateByDate)
+                    {
+                        if (state.State == Enumerations.ParkingStateEnum.NOTFREE)
+                        {
+                            var stateFree = currentParkingStateByDate.FirstOrDefault(x => x.Date >= state.Date && x.ParkingId == parkingId && x.State == Enumerations.ParkingStateEnum.FREE);
+
+                            if (stateFree != null)
+                            {
+                                TimeSpan time = stateFree.Date - state.Date;
+
+
+                                if (parkingStateDictionary.ContainsKey(month) == false)
+                                {
+                                    parkingStateDictionary.Add(month, 0);
+                                }
+
+                                int hours = hours = (int)Math.Floor(time.TotalMinutes / 60);
+                                int minutes = Convert.ToInt32(time.TotalMinutes % 60);
+
+                                if (minutes > 15)
+                                {
+                                    hours++;
+                                }
+
+                                parkingStateDictionary[month] += hours;
+                            }
+                        }
+                    }
+                }
+                parkingStateDictionary[month] *= GetSettings().Price;
+            }
+
+            return parkingStateDictionary;
         }
 
         private Dictionary<double, double> PrepareHistoricalHighchart(IEnumerable<StateViewModel> model)
@@ -111,7 +164,7 @@ namespace SmartParkingWeb.Core.Services
                         if (state.State == Enumerations.ParkingStateEnum.NOTFREE)
                         {
                             var stateFree = currentParkingStateByDate.FirstOrDefault(x => x.Date >= state.Date && x.ParkingId == parkingId && x.State == Enumerations.ParkingStateEnum.FREE);
-                            
+
                             if (stateFree != null)
                             {
                                 TimeSpan time = stateFree.Date - state.Date;
