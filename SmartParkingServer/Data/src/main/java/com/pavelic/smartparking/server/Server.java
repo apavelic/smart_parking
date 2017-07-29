@@ -154,6 +154,16 @@ public class Server {
         parkingState.insertOne(doc);
     }
 
+    public void insertState(State state) throws ParseException {
+        MongoCollection<Document> parkingState = db.getCollection("state");
+
+        Document doc = new Document("parkingId", state.getParkingId());
+        doc.append("state", state.getState().toString());
+        doc.append("date", state.getDate());
+
+        parkingState.insertOne(doc);
+    }
+
     public List<Parking> getParking() {
         MongoCollection<Document>  model = db.getCollection("parking");
 

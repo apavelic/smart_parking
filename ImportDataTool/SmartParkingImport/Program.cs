@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using RestSharp;
+using MongoDB.Bson.IO;
 
 namespace SmartParkingImport
 {
     class Program
     {
-        private static IMongoClient client;
-        private static IMongoDatabase database;
 
         private static readonly DateTime START_DATE = new DateTime(2017, 4, 1, 12, 0, 0);
         private static readonly DateTime END_DATE = new DateTime(2017, 7, 18, 12, 0, 0);
+
+        private static readonly string LOCAL_HOST = "http://localhost:8080/Rest";
+        private static readonly string REMOTE_HOST = "http://www.smart-parking.cf";
 
         private static readonly int[] PARKING_IDS = new int[] { 1, 2, 3, 4 };
         private static readonly int MIN = 1;
@@ -24,8 +27,6 @@ namespace SmartParkingImport
 
         static void Main(string[] args)
         {
-            client = new MongoClient();
-            database = client.GetDatabase("SmartParking");
             random = new Random(10000);
 
             InsertInitialData();
@@ -33,8 +34,6 @@ namespace SmartParkingImport
 
         private static void InsertInitialData()
         {
-            var collection = database.GetCollection<BsonDocument>("state");
-
             foreach (int id in PARKING_IDS)
             {
                 DateTime startDate = START_DATE;
@@ -42,28 +41,37 @@ namespace SmartParkingImport
                 while (startDate <= END_DATE)
                 {
                     startDate = startDate.AddMinutes(random.Next(20));
-
-                    BsonDocument document = new BsonDocument
+                    StateVM model = new StateVM
                     {
-                        { "parkingId", id },
-                        { "state", "NOTFREE" },
-                        { "date", startDate }
+                        Date = startDate.ToString("dd.MM.yyyy hh:mm"),
+                        ParkingId = id,
+                        State = "NOTFREE"
                     };
 
-                    collection.InsertOne(document);
+                    InsertDocument(model);
                     int minutes = random.Next(MIN, MAX);
                     startDate = startDate.AddMinutes(minutes);
 
-                    document = new BsonDocument
+                    model = new StateVM
                     {
-                        { "parkingId", id },
-                        { "state", "FREE" },
-                        { "date", startDate }
+                        Date = startDate.ToString("dd.MM.yyyy hh:mm"),
+                        ParkingId = id,
+                        State = "FREE"
                     };
 
-                    collection.InsertOne(document);
+                    InsertDocument(model);
                 }
             }
+        }
+
+        private static void InsertDocument(StateVM model)
+        {
+            RestClient client = new RestClient(REMOTE_HOST);
+            RestRequest request = new RestRequest("state/{model}", Method.PUT);
+
+            request.AddParameter("model", Newtonsoft.Json.JsonConvert.SerializeObject(model), ParameterType.UrlSegment);
+
+            IRestResponse response = client.Execute(request);
         }
     }
 }

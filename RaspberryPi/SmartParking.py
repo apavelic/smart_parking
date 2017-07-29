@@ -5,12 +5,9 @@ import time
 import socket
 import dns.resolver
 
-resolver = dns.resolver.Resolver()
-dns = resolver.query("Andrej", "A")
-
 MAX_DISTANCE = 5
 PORT = 1234
-HOST = str(dns[0])
+HOST = "139.59.215.1"
 
 #sensor 1
 TRIG1 = 23

@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Logger;
 
 /**
  * Created by Andrej on 15.07.2017..
@@ -20,23 +21,25 @@ public class RestServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Runnable task = () -> Server.start();
+        try {
+            Runnable task = () -> Server.start();
 
-        Server.getServer().updateSettings(new ParkingSettings(10));
+            ExecutorService es = Executors.newFixedThreadPool(4);
+            es.execute(new Thread(task));
 
-        ExecutorService es = Executors.newFixedThreadPool(4);
-        es.execute(new Thread(task));
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Parking RESTFUL service</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>REST SERVER IS STARTED</h1>");
-        out.println("</body>");
-        out.println("</html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Parking RESTFUL service</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>REST SERVER IS STARTED</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

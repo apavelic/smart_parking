@@ -13,9 +13,12 @@ namespace SmartParkingWeb.Core.Services
 {
     public class ParkingService
     {
+
+        private readonly string HOST = "http://www.smart-parking.cf";
+
         public IEnumerable<ParkingViewModel> GetParking()
         {
-            RestClient client = new RestClient("http://localhost:8080/Rest");
+            RestClient client = new RestClient(HOST);
             RestRequest request = new RestRequest("parking", Method.GET);
 
             IRestResponse response = client.Execute(request);
@@ -28,7 +31,7 @@ namespace SmartParkingWeb.Core.Services
 
         public string GetParkingStatus()
         {
-            RestClient client = new RestClient("http://localhost:8080/Rest");
+            RestClient client = new RestClient(HOST);
             RestRequest request = new RestRequest("parking/parkingStatus", Method.GET);
 
             IRestResponse response = client.Execute(request);
@@ -38,7 +41,7 @@ namespace SmartParkingWeb.Core.Services
 
         public SettingsViewModel GetSettings()
         {
-            RestClient client = new RestClient("http://localhost:8080/Rest");
+            RestClient client = new RestClient(HOST);
             RestRequest request = new RestRequest("settings", Method.GET);
 
             IRestResponse response = client.Execute(request);
@@ -51,7 +54,7 @@ namespace SmartParkingWeb.Core.Services
 
         public void UpdateSettings(SettingsViewModel settings)
         {
-            RestClient client = new RestClient("http://localhost:8080/Rest");
+            RestClient client = new RestClient(HOST);
             RestRequest request = new RestRequest("settings/{model}", Method.PUT);
 
             request.AddParameter("model", JsonConvert.SerializeObject(settings), ParameterType.UrlSegment);
@@ -61,7 +64,7 @@ namespace SmartParkingWeb.Core.Services
 
         public List<StateViewModel> GetParkingStateHistory(string from, string to)
         {
-            RestClient client = new RestClient("http://localhost:8080/Rest");
+            RestClient client = new RestClient(HOST);
             RestRequest request = new RestRequest(Method.GET);
 
             string action = "state";
