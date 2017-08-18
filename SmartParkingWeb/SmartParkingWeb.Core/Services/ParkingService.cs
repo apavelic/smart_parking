@@ -14,7 +14,8 @@ namespace SmartParkingWeb.Core.Services
     public class ParkingService
     {
 
-        private readonly string HOST = "http://www.smart-parking.cf";
+        //private readonly string HOST = "http://www.smart-parking.cf";
+        private readonly string HOST = "http://localhost:8080/Rest";
 
         public IEnumerable<ParkingViewModel> GetParking()
         {
@@ -47,7 +48,15 @@ namespace SmartParkingWeb.Core.Services
             IRestResponse response = client.Execute(request);
 
             string jsonContent = response.Content;
-            SettingsViewModel model = JsonConvert.DeserializeObject<SettingsViewModel>(jsonContent);
+            SettingsViewModel model = null;
+            try
+            {
+                model = JsonConvert.DeserializeObject<SettingsViewModel>(jsonContent);
+            }
+            catch (Exception)
+            {
+                UpdateSettings(new SettingsViewModel { Price = 5 });
+            }
 
             return model;
         }
@@ -87,14 +96,18 @@ namespace SmartParkingWeb.Core.Services
 
         public ChartViewModel PrepareChartData(string from, string to)
         {
-            IEnumerable<StateViewModel> model = GetParkingStateHistory(from, to).OrderBy(x => x.Date);
-
             ChartViewModel chart = new ChartViewModel();
 
-            Parallel.Invoke(
-                () => chart.MultipleHighchartData = PrepareMultipleHighchart(model),
-                () => chart.HistoricalHighchartData = PrepareHistoricalHighchart(model),
-                () => chart.HistogramHighchartData = PrepareHistogramHighchart(model));
+            var states = GetParkingStateHistory(from, to);
+            if (states != null)
+            {
+                IEnumerable<StateViewModel> model = GetParkingStateHistory(from, to).OrderBy(x => x.Date);
+                Parallel.Invoke(
+                    () => chart.MultipleHighchartData = PrepareMultipleHighchart(model),
+                    () => chart.HistoricalHighchartData = PrepareHistoricalHighchart(model),
+                    () => chart.HistogramHighchartData = PrepareHistogramHighchart(model));
+            }
+
 
             return chart;
         }

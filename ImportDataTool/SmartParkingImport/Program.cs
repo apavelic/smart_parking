@@ -17,7 +17,7 @@ namespace SmartParkingImport
         private static readonly DateTime END_DATE = new DateTime(2017, 7, 18, 12, 0, 0);
 
         private static readonly string LOCAL_HOST = "http://localhost:8080/Rest";
-        private static readonly string REMOTE_HOST = "http://www.smart-parking.cf";
+        private static readonly string REMOTE_HOST = "http://139.59.215.1";
 
         private static readonly int[] PARKING_IDS = new int[] { 1, 2, 3, 4 };
         private static readonly int MIN = 1;
